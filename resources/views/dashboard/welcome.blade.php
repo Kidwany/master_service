@@ -70,7 +70,7 @@
                     <div class="icon">
                         <i class="fa fa-graduation-cap"></i>
                     </div>
-                    <a href="{{url('admin/classes')}}" class="small-box-footer">
+                    <a href="{{adminUrl('message')}}" class="small-box-footer">
                         More info <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 </div>
@@ -78,7 +78,7 @@
             <!-- ./col -->
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
-                <div class="small-box bg-red">
+                {{--<div class="small-box bg-red">
                     <div class="inner">
                         <h3></h3>
 
@@ -90,7 +90,7 @@
                     <a href="{{url('admin/subjects')}}" class="small-box-footer">
                         More info <i class="fa fa-arrow-circle-right"></i>
                     </a>
-                </div>
+                </div>--}}
             </div>
             <!-- ./col -->
         </div>
@@ -125,7 +125,7 @@
                     </div>
                     <div class="box-body">
 
-                        <a href="http://webdesign.be4em.info/ahmedelnabiladmin/employee/getAll" class="btn btn-app">
+                        <a href="{{adminUrl('messages')}}" class="btn btn-app">
                             <span class="badge bg-yellow">{{$messagesCount}}</span>
                             <i class="fa fa-user-secret"></i> Messages
                         </a>
@@ -176,9 +176,9 @@
                                 <div class="small-box shortcut_div">
                                     <div class="inner">
                                         <div class="text-center shortcut_img">
-                                            <a href="http://webdesign.be4em.info/ahmedelnabiladmin/service/add"><img src="{{asset('dashboard/img/dolly-512.png')}}" class="img-responsive"></a>
+                                            <a href="{{adminUrl('service/create')}}"><img src="{{asset('dashboard/img/dolly-512.png')}}" class="img-responsive"></a>
                                         </div>
-                                        <h3 class="text-center"><a href="http://webdesign.be4em.info/ahmedelnabiladmin/service/add">Add Service</a></h3>
+                                        <h3 class="text-center"><a href="{{adminUrl('service/create')}}">Add Service</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -204,9 +204,9 @@
                                 <div class="small-box shortcut_div">
                                     <div class="inner">
                                         <div class="text-center shortcut_img">
-                                            <a href="http://webdesign.be4em.info/ahmedelnabiladmin/teamwork/add"><img src="{{asset('dashboard/img/download.png')}}" class="img-responsive"></a>
+                                            <a href="{{adminUrl('client/create')}}"><img src="{{asset('dashboard/img/download.png')}}" class="img-responsive"></a>
                                         </div>
-                                        <h3 class="text-center"><a href="http://webdesign.be4em.info/ahmedelnabiladmin/teamwork/add">Add Client</a></h3>
+                                        <h3 class="text-center"><a href="{{adminUrl('client/create')}}">Add Client</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -217,9 +217,9 @@
                                 <div class="small-box shortcut_div">
                                     <div class="inner">
                                         <div class="text-center shortcut_img">
-                                            <a href="http://webdesign.be4em.info/ahmedelnabiladmin/employee/add"><img src="{{asset('dashboard/img/setting.jpg')}}" class="img-responsive"></a>
+                                            <a href="{{adminUrl('setting/edit')}}"><img src="{{asset('dashboard/img/setting.jpg')}}" class="img-responsive"></a>
                                         </div>
-                                        <h3 class="text-center"><a href="http://webdesign.be4em.info/ahmedelnabiladmin/employee/add">Edit Setting</a></h3>
+                                        <h3 class="text-center"><a href="{{adminUrl('setting/edit')}}">Edit Setting</a></h3>
                                     </div>
                                 </div>
                             </div>

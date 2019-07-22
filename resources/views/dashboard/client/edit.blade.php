@@ -28,7 +28,7 @@
 
     <section class="content">
         @include('dashboard.layouts.messages')
-        <form role="form" action="{{route('slider.update', $slide->id)}}" enctype="multipart/form-data" method="post">
+        <form role="form" action="{{route('client.update', $client->id)}}" enctype="multipart/form-data" method="post">
             @csrf
             @method('patch')
             <div class="row">
@@ -45,7 +45,7 @@
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1">Client Name</label>
-                                    <input type="text" class="form-control" name="name_en" id="exampleInputEmail1" placeholder="Enter Client Name" value="{{old('name_en')}}">
+                                    <input type="text" class="form-control" name="name_en" id="exampleInputEmail1" placeholder="Enter Client Name" value="{{$client->client_en->name}}">
                                     <p class="help-block">Enter Name of Client</p>
                                 </div>
 
@@ -77,7 +77,7 @@
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1">اسم العميل</label>
-                                    <input type="text" class="form-control" name="name_ar" id="exampleInputEmail1" placeholder="ادخل عنوان الصورة" value="{{old('name_ar')}}">
+                                    <input type="text" class="form-control" name="name_ar" id="exampleInputEmail1" placeholder="ادخل عنوان الصورة" value="{{$client->client_ar->name}}">
                                     <p class="help-block">أدخل اسم العميل</p>
                                 </div>
 

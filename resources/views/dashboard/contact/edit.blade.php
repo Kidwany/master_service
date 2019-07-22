@@ -16,13 +16,13 @@
 
     <section class="content-header">
         <h1>
-            Clients
-            <small>Edit Client</small>
+            Contact
+            <small>Edit Contact</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="{{adminUrl('/')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="{{adminUrl('/client')}}">Client</a></li>
-            <li class="active">Edit Client</li>
+            <li><a href="{{adminUrl('/contact/edit')}}">Contact</a></li>
+            <li class="active">Edit Contact</li>
         </ol>
     </section>
 
@@ -37,7 +37,7 @@
                 <div class="col-md-6">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Add Client Info</h3>
+                            <h3 class="box-title">Update Contact Info</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
@@ -46,28 +46,28 @@
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1">Email</label>
-                                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="Enter Official Email" value="{{old('email')}}">
+                                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="Enter Official Email" value="{{$info->email}}">
                                 </div>
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1">Phone</label>
-                                    <input type="text" class="form-control" name="phone" id="exampleInputEmail1" placeholder="Enter Phone Number" value="{{old('phone')}}">
+                                    <input type="text" class="form-control" name="phone" id="exampleInputEmail1" placeholder="Enter Phone Number" value="{{$info->phone}}">
                                 </div>
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1">Another Phone</label>
-                                    <input type="text" class="form-control" name="phone_alt" id="exampleInputEmail1" placeholder="Enter Another Phone Number" value="{{old('phone_alt')}}">
+                                    <input type="text" class="form-control" name="phone_alt" id="exampleInputEmail1" placeholder="Enter Another Phone Number" value="{{$info->phone_alt}}">
                                 </div>
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1"> Address</label>
-                                    <input type="text" class="form-control" name="address_en" id="exampleInputEmail1" placeholder="Enter Address">
+                                    <input type="text" class="form-control" name="address_en" id="exampleInputEmail1" placeholder="Enter Address" value="{{$info->address_en}}">
                                     <p class="help-block"> Enter Address Of Company </p>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1"> Location</label>
-                                    <input type="text" class="form-control" name="address_en" id="exampleInputEmail1" placeholder="Location of Company">
+                                    <input type="url" class="form-control" name="location" id="exampleInputEmail1" placeholder="Location of Company" value="{{$info->location}}">
                                     <p class="help-block"> Add Location Link of company from google maps </p>
                                 </div>
 
@@ -86,49 +86,49 @@
                                 <div class="col-lg-12">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-facebook-square"></i> Facebook</span>
-                                        <input type="url" class="form-control" placeholder="Facebook Page URL" name="facebook">
+                                        <input type="url" class="form-control" placeholder="Facebook Page URL" name="facebook" value="{{$info->facebook}}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-twitter-square"></i>Twitter</span>
-                                        <input type="url" class="form-control" placeholder="Twitter Page URL" name="twitter">
+                                        <input type="url" class="form-control" placeholder="Twitter Page URL" name="twitter" value="{{$info->twitter}}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-instagram"></i> Instagram</span>
-                                        <input type="url" class="form-control" placeholder="Instagram Page URL" name="instagram">
+                                        <input type="url" class="form-control" placeholder="Instagram Page URL" name="instagram" value="{{$info->instagram}}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-youtube-play"></i> Youtube</span>
-                                        <input type="url" class="form-control" placeholder="Youtube Page URL" name="youtube">
+                                        <input type="url" class="form-control" placeholder="Youtube Page URL" name="youtube" value="{{$info->youtube}}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-linkedin-square"></i> Linkedin</span>
-                                        <input type="url" class="form-control" placeholder="Linkedin Page URL" name="linkedin">
+                                        <input type="url" class="form-control" placeholder="Linkedin Page URL" name="linkedin" value="{{$info->linkedin}}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-behance-square"></i> Behance</span>
-                                        <input type="url" class="form-control" placeholder="Behance Page URL" name="behance">
+                                        <input type="url" class="form-control" placeholder="Behance Page URL" name="behance" value="{{$info->behance}}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-pinterest-square"></i> Pintrest</span>
-                                        <input type="url" class="form-control" placeholder="Pintrest Page URL" name="pintrest">
+                                        <input type="url" class="form-control" placeholder="Pintrest Page URL" name="pintrest" value="{{$info->pintrest}}">
                                     </div>
                                 </div>
 
@@ -155,7 +155,7 @@
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1">العنوان</label>
-                                    <input type="text" class="form-control" name="address_ar" id="exampleInputEmail1" placeholder="ادخل عنوان الشركة" value="{{old('address_ar')}}">
+                                    <input type="text" class="form-control" name="address_ar" id="exampleInputEmail1" placeholder="ادخل عنوان الشركة" value="{{$info->address_ar}}">
                                     <p class="help-block">أدخل عنوان الشركة</p>
                                 </div>
 

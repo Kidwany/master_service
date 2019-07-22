@@ -28,7 +28,7 @@
 
     <section class="content">
         @include('dashboard.layouts.messages')
-        <form role="form" action="{{route('slider.update', $slide->id)}}" enctype="multipart/form-data" method="post">
+        <form role="form" action="{{route('service.update', $service->id)}}" enctype="multipart/form-data" method="post">
             @csrf
             @method('patch')
             <div class="row">
@@ -36,7 +36,7 @@
                 <div class="col-md-6">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Edit Service Info</h3>
+                            <h3 class="box-title">Add Service Info</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
@@ -44,19 +44,19 @@
                             <div class="form-group">
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1"> Title</label>
-                                    <input type="text" class="form-control" name="title_en" id="exampleInputEmail1" placeholder="Enter Service Title" value="{{old('url')}}">
+                                    <input type="text" class="form-control" name="title_en" id="exampleInputEmail1" placeholder="Enter Service Title" value="{{$service->service_en->title}}">
                                     <p class="help-block">Enter title of service</p>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1">Service Slug</label>
-                                    <input type="text" class="form-control" name="slug_en" id="exampleInputEmail1" placeholder="Enter Service slug" value="{{old('title')}}">
+                                    <input type="text" class="form-control" name="slug_en" id="exampleInputEmail1" placeholder="Enter Service slug" value="{{$service->service_en->slug}}">
                                     <p class="help-block">Enter Title of Service</p>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1"> Slide Description</label>
-                                    <input type="text" class="form-control" name="description_en" id="exampleInputEmail1" placeholder="Enter Service Description" value="{{old('description')}}">
+                                    <input type="text" class="form-control" name="description_en" id="exampleInputEmail1" placeholder="Enter Service Description" value="{{$service->service_en->description}}">
                                     <p class="help-block">Enter Description of Service</p>
                                 </div>
 
@@ -89,19 +89,19 @@
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1"> عنوان الخدمة</label>
-                                    <input type="text" class="form-control" name="title_ar" id="exampleInputEmail1" placeholder="ادخل عنوان الخدمة" value="{{old('title_ar')}}">
+                                    <input type="text" class="form-control" name="title_ar" id="exampleInputEmail1" placeholder="ادخل عنوان الخدمة" value="{{$service->service_ar->title}}">
                                     <p class="help-block">أضف عنوان الخدمة</p>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1"> نبذة عن الخدمة</label>
-                                    <input type="text" class="form-control" name="slug_ar" id="exampleInputEmail1" placeholder="ادخل  نبذة عن الخدمة" value="{{old('slug_ar')}}">
+                                    <input type="text" class="form-control" name="slug_ar" id="exampleInputEmail1" placeholder="ادخل  نبذة عن الخدمة" value="{{$service->service_ar->slug}}">
                                     <p class="help-block">ادخل  نبذة عن الخدمة</p>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1">وصف الخدمة</label>
-                                    <input type="text" class="form-control" name="slug_ar" id="exampleInputEmail1" placeholder="ادخل  وصف الخدمة" value="{{old('description')}}">
+                                    <input type="text" class="form-control" name="description_ar" id="exampleInputEmail1" placeholder="ادخل  وصف الخدمة" value="{{$service->service_ar->description}}">
                                     <p class="help-block">ادخل وصفا دقيقا عن الخدمة</p>
                                 </div>
 

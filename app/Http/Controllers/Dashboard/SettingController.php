@@ -20,10 +20,6 @@ class SettingController extends Controller
     }
 
 
-
-
-
-
     public function update(Request $request)
     {
         $input = $request->all();
@@ -68,15 +64,6 @@ class SettingController extends Controller
             $path = 'dashboardImages/settings/' . $name;
             $image = Image::create(['name' => $name, 'path' => $path]);
             $input['logo'] = $image->id;
-        }
-
-        if ($file = $request->file('favicon'))
-        {
-            $name =  time() . $file->getClientOriginalName();
-            $file->move('dashboardImages/settings', $name);
-            $path = 'dashboardImages/settings/' . $name;
-            $image = Image::create(['name' => $name, 'path' => $path]);
-            $input['favicon'] = $image->id;
         }
 
 

@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Contact;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class ContactController extends Controller
 {
     public function edit()
     {
-        //$info = Contact::orderBy('email', 'desc')->first();
-        return view('dashboard.contact.edit');
+        $info = Contact::orderBy('created_at', 'desc')->first();
+        return view('dashboard.contact.edit', compact('info'));
     }
 
 
@@ -20,6 +22,7 @@ class ContactController extends Controller
         $this->validate($request,[
             'email'         => 'bail|required|email|max:100',
             'phone'         => 'bail|required|min:8|max:20',
+            'phone_alt'     => 'bail|max:20',
             'address_en'    => 'bail|required|max:500',
             'address_ar'    => 'bail|required|max:500',
             'facebook'      => 'bail|url|nullable|max:300',
@@ -44,11 +47,10 @@ class ContactController extends Controller
 
         ]);
 
-        $contact = Contact::orderBy('email', 'desc')->first();
+        $contact = Contact::orderBy('created_at', 'desc')->first();
         $contact->update($input);
 
         Session::flash('update', 'Contact Info Has Been Updated Successfully');
-
-        return redirect('admin/contact/edit');
+        return redirect(adminUrl('contact/edit'));
     }
 }

@@ -43,7 +43,7 @@
                 <div class="box box-primary" style="padding: 15px">
                     <div class="box-header with-border">
                         <h3 class="box-title">All Users Info</h3>
-                        <a href="{{url('admin/users/create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Add New Slide </a>
+                        <a href="{{adminUrl('slider/create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Add New Slide </a>
                     </div>
                 @include('dashboard.layouts.messages')
                 <!-- /.box-header -->
@@ -72,36 +72,40 @@
                         </tr>
                         </tfoot>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td><img src="{{asset('dashboard/img/picture.png')}}" style="width: 50px" alt="slide image" > </td>
-                            <td>Title</td>
-                            <td>Ahmed Raouf</td>
-                            <td>15 June</td>
-                            <td>15 June</td>
-                            <td>
-                                <a href="" class style="font-size: 20px"><i class="fa fa-pencil-square-o"></i> </a>
-                                <button type="button" class data-toggle="modal" data-target="#delete" style="font-size: 20px">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
+
+                        @foreach($slides as $slide)
+                            <tr>
+                                <td>{{$slide->id}}</td>
+                                <td><img src="{{$slide->image_id ? asset($slide->image->path) : asset('dashboard/img/picture.png')}}" style="width: 50px" alt="slide image" > </td>
+                                <td>{{$slide->slider_en->title}}</td>
+                                <td>{{$slide->createdBy->name}}</td>
+                                <td>{{$slide->created_at ? $slide->created_at->diffForHumans() : ''}}</td>
+                                <td>{{$slide->updated_at ? $slide->updated_at->diffForHumans() : ''}}</td>
+                                <td>
+                                    <a href="{{route('slider.edit', $slide->id)}}" class style="font-size: 20px"><i class="fa fa-pencil-square-o"></i> </a>
+                                    <button type="button" class data-toggle="modal" data-target="#delete{{$slide->id}}" style="font-size: 20px">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        @endforeach
+
                         </tbody>
                     </table>
-
-                            <div class="modal modal-danger fade" id="delete">
+                    @foreach($slides as $slide)
+                            <div class="modal modal-danger fade" id="delete{{$slide->id}}">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title">Delete User</h4>
+                                            <h4 class="modal-title">Delete Slide</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <p>Are You Sure You Want To Delete User <strong></strong></p>
+                                            <p>Are You Sure You Want To Delete Slide <strong>{{$slide->slider_en->title}}</strong></p>
                                         </div>
                                         <div class="modal-footer">
-                                            <form action="{{route('slider.destroy', 5)}}" method="post">
+                                            <form action="{{route('slider.destroy', $slide->id)}}" method="post">
                                                 @method('delete')
                                                 @csrf
                                                 <div class="d-flex flex-row">
@@ -120,6 +124,7 @@
                                 <!-- /.modal-dialog -->
                             </div>
                             <!-- /.modal -->
+                    @endforeach
 
                 </div>
             </div>

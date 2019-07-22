@@ -43,7 +43,7 @@ class Slider extends Model  {
     protected $dates = [];
 
 
-    public function created_by()
+    public function createdBy()
     {
         return $this->belongsTo(User::class, 'created_by', 'id');
     }
@@ -51,6 +51,16 @@ class Slider extends Model  {
     public function image()
     {
         return $this->belongsTo(Image::class, 'image_id', 'id');
+    }
+
+    public function slider_ar()
+    {
+        return $this->hasOne(SliderArabic::class, 'slide_id', 'id');
+    }
+
+    public function slider_en()
+    {
+        return $this->hasOne(SliderEnglish::class, 'slide_id', 'id');
     }
 
 }

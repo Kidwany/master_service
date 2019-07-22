@@ -53,4 +53,30 @@ class About extends Model  {
         return $this->hasOne(AboutArabic::class, 'about_id', 'id');
     }
 
+    public function aboutImage()
+    {
+        return $this->belongsTo(Image::class, 'image_id', 'id');
+    }
+
+    public function missionImage()
+    {
+        return $this->belongsTo(Image::class, 'mission_image_id', 'id');
+    }
+
+    public function visionImage()
+    {
+        return $this->belongsTo(Image::class, 'vision_image_id', 'id');
+    }
+
+    public function valuesImage()
+    {
+        return $this->belongsTo(Image::class, 'values_image_id', 'id');
+    }
+
+    public function approachImage()
+    {
+        return $this->belongsTo(Image::class, 'approach_image_id', 'id');
+    }
+
+
 }

@@ -28,7 +28,7 @@
 
     <section class="content">
         @include('dashboard.layouts.messages')
-        <form role="form" action="{{route('slider.store')}}" enctype="multipart/form-data" method="post">
+        <form role="form" action="{{route('client.store')}}" enctype="multipart/form-data" method="post">
             @csrf
             @method('post')
             <input type="hidden" name="created_by">

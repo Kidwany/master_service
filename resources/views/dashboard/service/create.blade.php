@@ -28,7 +28,7 @@
 
     <section class="content">
         @include('dashboard.layouts.messages')
-        <form role="form" action="{{route('slider.store')}}" enctype="multipart/form-data" method="post">
+        <form role="form" action="{{route('service.store')}}" enctype="multipart/form-data" method="post">
             @csrf
             @method('post')
             <input type="hidden" name="created_by">
@@ -45,19 +45,19 @@
                         <div class="form-group">
                             <div class="col-lg-12">
                                 <label for="exampleInputEmail1"> Title</label>
-                                <input type="text" class="form-control" name="title_en" id="exampleInputEmail1" placeholder="Enter Service Title" value="{{old('url')}}">
+                                <input type="text" class="form-control" name="title_en" id="exampleInputEmail1" placeholder="Enter Service Title" value="{{old('title_en')}}">
                                 <p class="help-block">Enter title of service</p>
                             </div>
 
                             <div class="col-lg-12">
                                 <label for="exampleInputEmail1">Service Slug</label>
-                                <input type="text" class="form-control" name="slug_en" id="exampleInputEmail1" placeholder="Enter Service slug" value="{{old('title')}}">
+                                <input type="text" class="form-control" name="slug_en" id="exampleInputEmail1" placeholder="Enter Service slug" value="{{old('slug_en')}}">
                                 <p class="help-block">Enter Title of Service</p>
                             </div>
 
                             <div class="col-lg-12">
                                 <label for="exampleInputEmail1"> Slide Description</label>
-                                <input type="text" class="form-control" name="description_en" id="exampleInputEmail1" placeholder="Enter Service Description" value="{{old('description')}}">
+                                <input type="text" class="form-control" name="description_en" id="exampleInputEmail1" placeholder="Enter Service Description" value="{{old('description_en')}}">
                                 <p class="help-block">Enter Description of Service</p>
                             </div>
 
@@ -102,7 +102,7 @@
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1">وصف الخدمة</label>
-                                    <input type="text" class="form-control" name="slug_ar" id="exampleInputEmail1" placeholder="ادخل  وصف الخدمة" value="{{old('description')}}">
+                                    <input type="text" class="form-control" name="description_ar" id="exampleInputEmail1" placeholder="ادخل  وصف الخدمة" value="{{old('description_ar')}}">
                                     <p class="help-block">ادخل وصفا دقيقا عن الخدمة</p>
                                 </div>
 

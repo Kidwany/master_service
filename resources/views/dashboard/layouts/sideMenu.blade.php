@@ -72,6 +72,17 @@
 
             <li class="treeview">
                 <a href="#">
+                    <i class="fa fa-envelope"></i>
+                    <span>Messages</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{adminUrl('message/edit')}}"><i class="fa fa-edit"></i> Show Inbox</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
                     <i class="fa fa-globe"></i>
                     <span>About</span>
                     <i class="fa fa-angle-left pull-right"></i>

@@ -42,9 +42,14 @@ class Client extends Model  {
      */
     protected $dates = [];
 
-    public function created_by()
+    public function createdBy()
     {
         return $this->belongsTo(User::class, 'created_by', 'id');
+    }
+
+    public function image()
+    {
+        return $this->belongsTo(Image::class, 'image_id', 'id');
     }
 
 

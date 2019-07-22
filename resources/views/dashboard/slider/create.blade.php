@@ -45,32 +45,32 @@
                         <div class="form-group">
                             <div class="col-lg-12">
                                 <label for="exampleInputEmail1"> URL</label>
-                                <input type="text" class="form-control" name="url" id="exampleInputEmail1" placeholder="Enter URL" value="{{old('url')}}">
+                                <input type="url" class="form-control" name="url" id="exampleInputEmail1" placeholder="Enter URL" value="{{old('url')}}">
                                 <p class="help-block">Enter Url of Slide If Exist</p>
                             </div>
 
                             <div class="col-lg-12">
                                 <label for="exampleInputEmail1"> Slide Title</label>
-                                <input type="text" class="form-control" name="title_en" id="exampleInputEmail1" placeholder="Enter Slide Title" value="{{old('title')}}">
+                                <input type="text" class="form-control" name="title_en" id="exampleInputEmail1" placeholder="Enter Slide Title" value="{{old('title_en')}}">
                                 <p class="help-block">Enter Title of Slide</p>
                             </div>
 
                             <div class="col-lg-12">
                                 <label for="exampleInputEmail1"> Slide Description</label>
-                                <input type="text" class="form-control" name="description_en" id="exampleInputEmail1" placeholder="Enter Slide Description" value="{{old('description')}}">
+                                <input type="text" class="form-control" name="description_en" id="exampleInputEmail1" placeholder="Enter Slide Description" value="{{old('description_en')}}">
                                 <p class="help-block">Enter Description of Slide</p>
                             </div>
 
                             <div class="col-lg-12">
                                 <label for="exampleInputEmail1"> Button</label>
-                                <input type="text" class="form-control" name="button_en" id="exampleInputEmail1" placeholder="Enter button text" value="{{old('button')}}">
+                                <input type="text" class="form-control" name="button_en" id="exampleInputEmail1" placeholder="Enter button text" value="{{old('button_en')}}">
                                 <p class="help-block">Enter Text on button </p>
                             </div>
 
                             <div class="col-lg-12">
                                 <label for="exampleInputEmail1"> Image</label>
                                 <input type="file" class="form-control" name="image_id" id="exampleInputEmail1" placeholder="Enter button text">
-                                <p class="help-block"> Upload Slide Image </p>
+                                <p class="help-block"> Upload Slide Image <strong>Recommended High Resolution Image</strong> </p>
                             </div>
 
                         </div>
@@ -96,19 +96,19 @@
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1"> عنوان الصورة</label>
-                                    <input type="text" class="form-control" name="title_ar" id="exampleInputEmail1" placeholder="ادخل عنوان الصورة" value="{{old('title')}}">
+                                    <input type="text" class="form-control" name="title_ar" id="exampleInputEmail1" placeholder="ادخل عنوان الصورة" value="{{old('title_ar')}}">
                                     <p class="help-block">أضف عنوان الصورة</p>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1"> وصف الصورة</label>
-                                    <input type="text" class="form-control" name="description_ar" id="exampleInputEmail1" placeholder="ادخل وصف الصورة" value="{{old('description')}}">
+                                    <input type="text" class="form-control" name="description_ar" id="exampleInputEmail1" placeholder="ادخل وصف الصورة" value="{{old('description_ar')}}">
                                     <p class="help-block">ادخل وصف الصورة</p>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1"> االزر</label>
-                                    <input type="text" class="form-control" name="button_ar" id="exampleInputEmail1" placeholder="ادخل النص الخاص بالزر" value="{{old('button')}}">
+                                    <input type="text" class="form-control" name="button_ar" id="exampleInputEmail1" placeholder="ادخل النص الخاص بالزر" value="{{old('button_ar')}}">
                                     <p class="help-block">ادخل النص المراد وضعه على الزر مثال : شاهد المزيد</p>
                                 </div>
 

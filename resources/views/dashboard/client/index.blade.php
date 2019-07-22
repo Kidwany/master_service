@@ -53,7 +53,7 @@
                         <tr>
                             <th>id</th>
                             <th>Image</th>
-                            <th>Title</th>
+                            <th>Name</th>
                             <th>Created By</th>
                             <th>Created at</th>
                             <th>Updated at</th>
@@ -64,7 +64,7 @@
                         <tr>
                             <th>id</th>
                             <th>Image</th>
-                            <th>Title</th>
+                            <th>Name</th>
                             <th>Created By</th>
                             <th>Created at</th>
                             <th>Updated at</th>
@@ -72,36 +72,43 @@
                         </tr>
                         </tfoot>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td><img src="{{asset('dashboard/img/picture.png')}}" style="width: 50px" alt="slide image" > </td>
-                            <td>Title</td>
-                            <td>Ahmed Raouf</td>
-                            <td>15 June</td>
-                            <td>15 June</td>
-                            <td>
-                                <a href="" class style="font-size: 20px"><i class="fa fa-pencil-square-o"></i> </a>
-                                <button type="button" class data-toggle="modal" data-target="#delete" style="font-size: 20px">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
+                        @if($clients)
+                            @foreach($clients as $client)
+                                <tr>
+                                    <td>{{$client->id}}</td>
+                                    <td><img src="{{$client->image_id ? asset($client->image->path) : asset('dashboard/img/picture.png')}}" style="width: 50px" alt="slide image" > </td>
+                                    <td>{{$client->client_en->name}}</td>
+                                    <td>{{$client->createdBy->name}}</td>
+                                    <td>{{$client->created_at ? $client->created_at->diffForHumans() : ''}}</td>
+                                    <td>{{$client->updated_at ? $client->updated_at->diffForHumans() : ''}}</td>
+                                    <td>
+                                        <a href="{{route('client.edit', $client->id)}}" class style="font-size: 20px"><i class="fa fa-pencil-square-o"></i> </a>
+                                        <button type="button" class data-toggle="modal" data-target="#delete{{$client->id}}" style="font-size: 20px">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @endif
+
                         </tbody>
                     </table>
 
-                            <div class="modal modal-danger fade" id="delete">
+                    @if($clients)
+                        @foreach($clients as $client)
+                            <div class="modal modal-danger fade" id="delete{{$client->id}}">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title">Delete User</h4>
+                                            <h4 class="modal-title">Delete Client</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <p>Are You Sure You Want To Delete User <strong></strong></p>
+                                            <p>Are You Sure You Want To Delete Client <strong>{{$client->client_en->name}}</strong></p>
                                         </div>
                                         <div class="modal-footer">
-                                            <form action="{{route('slider.destroy', 5)}}" method="post">
+                                            <form action="{{route('client.destroy', $client->id)}}" method="post">
                                                 @method('delete')
                                                 @csrf
                                                 <div class="d-flex flex-row">
@@ -120,6 +127,8 @@
                                 <!-- /.modal-dialog -->
                             </div>
                             <!-- /.modal -->
+                        @endforeach
+                    @endif
 
                 </div>
             </div>
