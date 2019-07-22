@@ -4,7 +4,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{asset(Auth::user()->image_id ? Auth::user()->image->path : 'images/user.png')}}" class="img-circle" alt="User Image" style="max-width: 50px !important; height: 50px; object-fit: cover">
+                <img src="{{asset('dashboard/img/user.png')}}" class="img-circle" alt="User Image" style="max-width: 50px !important; height: 50px; object-fit: cover">
             </div>
             <div class="pull-left info">
                 <p>{{Auth::user()->name}}</p>
@@ -72,12 +72,24 @@
 
             <li class="treeview">
                 <a href="#">
+                    <i class="fa fa-file-image-o"></i>
+                    <span>Gallery</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{adminUrl('gallery/create')}}"><i class="fa fa-upload"></i> Upload To Gallery</a></li>
+                    <li><a href="{{adminUrl('gallery')}}"><i class="fa fa-edit"></i> Show / Edit Gallery</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
                     <i class="fa fa-envelope"></i>
                     <span>Messages</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{adminUrl('message/edit')}}"><i class="fa fa-edit"></i> Show Inbox</a></li>
+                    <li><a href="{{adminUrl('message')}}"><i class="fa fa-edit"></i> Show Inbox</a></li>
                 </ul>
             </li>
 

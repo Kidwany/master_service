@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Setting extends Model  {
+class Gallery extends Model  {
 
     /**
      * The database table used by the model.
@@ -12,14 +12,14 @@ class Setting extends Model  {
      * @var string
      */
     protected $connection = 'mysql';
-    protected $table = 'setting';
+    protected $table = 'gallery';
 
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['logo', 'status', 'default_lang', 'created_by'];
+    protected $fillable = ['image_id'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -45,23 +45,7 @@ class Setting extends Model  {
 
     public function image()
     {
-        return $this->belongsTo(Image::class, 'logo', 'id');
-    }
-
-    public function created_by()
-    {
-        return $this->belongsTo(User::class, 'created_by', 'id');
-    }
-
-
-    public function setting_ar()
-    {
-        return $this->hasOne(SettingArabic::class, 'setting_id', 'id');
-    }
-
-    public function setting_en()
-    {
-        return $this->hasOne(SettingEnglish::class, 'setting_id', 'id');
+        return $this->belongsTo(Image::class, 'image_id', 'id');
     }
 
 }

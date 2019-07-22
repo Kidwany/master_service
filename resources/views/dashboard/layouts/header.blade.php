@@ -215,13 +215,13 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{asset(Auth::user()->image_id ? Auth::user()->image->path : 'images/user.png')}}" class="user-image" alt="User Image">
+                        <img src="{{asset('dashboard/img/user.png')}}" class="user-image" alt="User Image">
                         <span class="hidden-xs">{{Auth::user()->name}}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="{{asset(Auth::user()->image_id ? Auth::user()->image->path : 'images/user.png')}}" class="img-circle" alt="User Image" style="object-fit: cover">
+                            <img src="{{asset('dashboard/img/user.png')}}" class="img-circle" alt="User Image" style="object-fit: cover">
 
                             <p>
                                 {{Auth::user()->name}} - Web Developer
@@ -231,7 +231,7 @@
                         <!-- Menu Body -->
                         <li class="user-body">
                             <div class="row">
-                                <div class="col-xs-4 text-center">
+                                {{--<div class="col-xs-4 text-center">
                                     <a href="#">Followers</a>
                                 </div>
                                 <div class="col-xs-4 text-center">
@@ -239,7 +239,7 @@
                                 </div>
                                 <div class="col-xs-4 text-center">
                                     <a href="#">Friends</a>
-                                </div>
+                                </div>--}}
                             </div>
                             <!-- /.row -->
                         </li>

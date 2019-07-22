@@ -125,7 +125,7 @@
                     </div>
                     <div class="box-body">
 
-                        <a href="{{adminUrl('messages')}}" class="btn btn-app">
+                        <a href="{{adminUrl('message')}}" class="btn btn-app">
                             <span class="badge bg-yellow">{{$messagesCount}}</span>
                             <i class="fa fa-user-secret"></i> Messages
                         </a>
@@ -273,14 +273,17 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
-                                    <td class="mailbox-name"><a href="read-mail.html">kidoo@gmail.com</a></td>
-                                    <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
-                                    <td class="mailbox-date">01100960900</td>
-                                    <td class="mailbox-date">15 Feb. 2016 11:03 PM</td>
-                                </tr>
-                                <tr>
+                                @if($messages)
+                                    @foreach($messages as $message)
+                                        <tr>
+                                            <td class="mailbox-name"><a href="{{route('message.show', $message->id)}}">{{$message->name}}</a></td>
+                                            <td class="mailbox-name">{{$message->email}}</td>
+                                            <td class="mailbox-subject"><b>{{$message->title}}</b> {{str_limit($message->message, 20, '...')}}</td>
+                                            <td class="mailbox-date">{{$message->phone}}</td>
+                                            <td class="mailbox-date">{{$message->created_at->format('d M h:m')}}</td>
+                                        </tr>
+                                    @endforeach
+                                @endif
                                 </tbody>
                             </table>
                             <!-- /.table -->

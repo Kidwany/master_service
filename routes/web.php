@@ -30,6 +30,13 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Dashboard'], function () {
     /* -- Return Client Page -- */
     Route::resource('/masterServiceAdmin/client', 'ClientController');
 
+    /* -- Return Message Page -- */
+    Route::resource('/masterServiceAdmin/message', 'MessageController');
+
+    /* -- Return Gallery Page -- */
+    Route::resource('/masterServiceAdmin/gallery', 'GalleryController');
+    Route::post('/masterServiceAdmin/upload-to-gallery', 'GalleryController@uploadImagesToGallery');
+
     /*--------  About   --------*/
     Route::get('/masterServiceAdmin/about/edit', 'AboutController@edit');
     Route::patch('/masterServiceAdmin/about/update', 'AboutController@update');
@@ -44,9 +51,19 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Dashboard'], function () {
 
 });
 
+Route::group(['middleware' => ['auth', 'maintenance'], 'namespace' => 'Dashboard'], function () {
+
+
+
+});
 
 Route::get('/masterServiceAdmin/login', 'Auth\LoginController@loginView');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('maintenance', function () {
+    return 'maintenance';
+});

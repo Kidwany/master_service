@@ -21,6 +21,9 @@ class DashboardController extends Controller
         $servicesCount = Service::all()->count();
         $clientsCount = Client::all()->count();
         $messagesCount = Message::all()->count();
-        return view('dashboard.welcome', compact('servicesCount', 'clientsCount', 'messagesCount'));
+        $messages = Message::all();
+        return view('dashboard.welcome', compact('servicesCount', 'clientsCount', 'messagesCount', 'messages'));
     }
+
+
 }

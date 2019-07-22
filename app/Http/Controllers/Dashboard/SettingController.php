@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Image;
+use App\Setting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class SettingController extends Controller
 {
@@ -15,70 +18,81 @@ class SettingController extends Controller
      */
     public function edit()
     {
-        //$info = Setting::orderBy('id', 'desc')->first();
-        return view('dashboard.setting.edit');
+        $info = Setting::orderBy('id', 'desc')->first();
+        return view('dashboard.setting.edit', compact('info'));
     }
+
+
+
+
 
 
     public function update(Request $request)
     {
+        $setting = Setting::with('setting_en', 'setting_ar', 'image')->orderBy('created_at', 'desc')->first();
         $input = $request->all();
         $this->validate($request,[
-            'website_title_en'  => 'bail|max:100',
-            'website_title_ar'  => 'bail|required|max:100',
-            'website_desc_en'   => 'bail|required|max:1000',
-            'website_desc_ar'   => 'bail|required|max:1000',
-            'default_lang'      => 'bail|required',
-            'open'              => 'bail|int',
-            'thumb'             => 'bail|file|mimes:jpeg,jpg,png,gif',
-            'logo'              => 'bail|file|mimes:jpeg,jpg,png,gif',
-            'favicon'           => 'bail|file|mimes:jpeg,jpg,png,gif',
+            'website_name_en'           => 'bail|max:100',
+            'website_name_ar'           => 'bail|required|max:100',
+            'website_description_en'    => 'bail|required|max:1000',
+            'website_description_ar'    => 'bail|required|max:1000',
+            'default_lang'              => 'bail|required',
+            'open'                      => 'bail|int',
+            'logo'                      => 'bail|file|mimes:jpeg,jpg,png,gif',
         ], [], [
-            'website_title_en'  => 'Website Title in English',
-            'website_title_ar'  => 'Website Title in Arabic',
-            'website_desc_en'   => 'Website Description in English',
-            'website_desc_ar'   => 'Website Description in Arabic',
-            'default_lang'      => 'Default Language',
-            'open'              => 'Website Status',
-            'thumb'             => 'Thumb',
-            'logo'              => 'Logo',
-            'favicon'           => 'Favicon',
+            'website_title_en'          => 'Website Name in English',
+            'website_title_ar'          => 'Website Name in Arabic',
+            'website_desc_en'           => 'Website Description in English',
+            'website_desc_ar'           => 'Website Description in Arabic',
+            'default_lang'              => 'Default Language',
+            'open'                      => 'Website Status',
+            'logo'                      => 'Logo',
 
         ]);
 
 
-
-        if ($file = $request->file('thumb'))
+        if ($uploadedFile = $request->file('logo'))
         {
-            $name =  time() . $file->getClientOriginalName();
-            $file->move('dashboardImages/settings', $name);
-            $path = 'dashboardImages/settings/' . $name;
-            $image = Image::create(['name' => $name, 'path' => $path]);
-            $input['thumb'] = $image->id;
-        }
-
-        if ($file = $request->file('logo'))
-        {
-            $name =  time() . $file->getClientOriginalName();
-            $file->move('dashboardImages/settings', $name);
-            $path = 'dashboardImages/settings/' . $name;
-            $image = Image::create(['name' => $name, 'path' => $path]);
+            $fileName = time() . $uploadedFile->getClientOriginalName();
+            $uploadedFile->move('dashboardImages/setting', $fileName);
+            $filePath = 'dashboardImages/setting/'.$fileName;
+            $image = Image::create(['name' => $fileName, 'path' => $filePath]);
             $input['logo'] = $image->id;
+            $setting->logo = $input['logo'];
         }
 
 
-        $setting = Setting::orderBy('created_at', 'desc')->first();
+
         if (!empty($setting))
         {
             $setting->update($input);
+
+            $setting->setting_ar()->update(['setting_id' => $setting->id, 'website_name' => $input['website_name_ar'], 'website_description' => $input['website_description_ar']]);
+            $setting->setting_en()->update(['setting_id' => $setting->id, 'website_name' => $input['website_name_en'], 'website_description' => $input['website_description_en']]);
+
         }
         else
         {
             Setting::create($input);
+            $setting->setting_ar()->create(['setting_id' => $setting->id, 'website_name' => $input['website_name_ar'], 'website_description' => $input['website_description_ar']]);
+            $setting->setting_en()->create(['setting_id' => $setting->id, 'website_name' => $input['website_name_en'], 'website_description' => $input['website_description_en']]);
+
+
         }
 
         Session::flash('update', 'Setting Has Been Updated Successfully');
 
-        return redirect('admin/setting/edit');
+        return redirect(adminUrl('setting/edit'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }
