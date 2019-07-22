@@ -32,12 +32,23 @@ class AboutController extends Controller
             'mission_image_id'  => 'mimes:jpeg,jpg,png,gif',
             'vision_image_id'   => 'mimes:jpeg,jpg,png,gif',
             'values_image_id'   => 'mimes:jpeg,jpg,png,gif',
+            'about_image_id'   => 'mimes:jpeg,jpg,png,gif',
         ], [], [
             'about_en'          => 'About in English',
             'about_ar'          => 'About in Arabic'
         ]);
 
         //Upload Slide Image
+        if ($uploadedFile = $request->file('about_image_id'))
+        {
+            $fileName = time() . $uploadedFile->getClientOriginalName();
+            $uploadedFile->move('dashboardImages/about', $fileName);
+            $filePath = 'dashboardImages/about/'.$fileName;
+            $image = Image::create(['name' => $fileName, 'path' => $filePath]);
+            $input['about_image_id'] = $image->id;
+            $about->image_id = $input['about_image_id'];
+        }
+
         if ($uploadedFile = $request->file('mission_image_id'))
         {
             $fileName = time() . $uploadedFile->getClientOriginalName();

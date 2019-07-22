@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Route::get('maintenance', function () {
+    return 'maintenance';
 });
+
+/*==============================================   Dashboard Routes    ====================================================*/
 
 
 Route::group(['middleware' => 'auth', 'namespace' => 'Dashboard'], function () {
@@ -51,9 +55,36 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Dashboard'], function () {
 
 });
 
-Route::group(['middleware' => ['auth', 'maintenance'], 'namespace' => 'Dashboard'], function () {
+Route::group(['middleware' => ['Maintenance', 'Lang']], function () {
+
+    Route::get('lang/{lang}', 'LanguageController@changeLanguage');
+
+    /*=======   Return Home     ========*/
+    Route::get('/', 'WebsitePagesController@index');
+
+    /*=======   Return about    ========*/
+    Route::get('/about', 'WebsitePagesController@about');
+
+    /*=======   Return gallery  ========*/
+    Route::get('/gallery', 'WebsitePagesController@gallery');
 
 
+    /*=======   Return Contact     ========*/
+    Route::get('/contact', 'WebsitePagesController@contact');
+    Route::post('message', 'WebsitePagesController@message');
+
+    /*=======   Return Service    ========*/
+    Route::get('/service', 'WebsitePagesController@service');
+
+    /*=======   Return Service Details     ========*/
+    Route::get('/serviceDetails/{id}', 'WebsitePagesController@serviceDetails');
+
+
+    /*=======   Return 404     ========*/
+    Route::get('/404', function ()
+    {
+        return view('website.404');
+    });
 
 });
 
@@ -61,9 +92,5 @@ Route::get('/masterServiceAdmin/login', 'Auth\LoginController@loginView');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('maintenance', function () {
-    return 'maintenance';
-});

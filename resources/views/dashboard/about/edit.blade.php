@@ -62,6 +62,12 @@
                                 </div>
 
                                 <div class="col-lg-12">
+                                    <label for="exampleInputEmail1"> Mission Image</label>
+                                    <input type="file" class="form-control" name="about_image_id" id="exampleInputEmail1" placeholder="Update Mession Image">
+                                    <p class="help-block"> Update The Image in Mission Section</p>
+                                </div>
+
+                                <div class="col-lg-12">
                                     <label for="exampleInputEmail1">Mission</label>
                                     <textarea type="text" class="form-control" name="mission_en" id="editor1" placeholder="Enter Mission of Website">{{$about->about_en->mission}}</textarea>
                                     <p class="help-block">Edit Mission of website</p>

@@ -43,7 +43,7 @@
                 <div class="box box-primary" style="padding: 15px">
                     <div class="box-header with-border">
                         <h3 class="box-title">All Clients Info</h3>
-                        <a href="{{url('admin/users/create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Add New Client </a>
+                        <a href="{{adminUrl('client/create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Add New Client </a>
                     </div>
                 @include('dashboard.layouts.messages')
                 <!-- /.box-header -->
