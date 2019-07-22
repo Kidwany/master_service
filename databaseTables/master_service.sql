@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2019 at 06:06 PM
+-- Generation Time: Jul 22, 2019 at 03:39 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -30,14 +30,21 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `about` (
   `id` int(10) NOT NULL,
-  `image_id` int(10) DEFAULT NULL,
-  `mission_image_id` int(10) DEFAULT NULL,
-  `vision_image_id` int(10) DEFAULT NULL,
-  `values_image_id` int(10) DEFAULT NULL,
-  `approach_image_id` int(10) DEFAULT NULL,
+  `image_id` int(10) UNSIGNED DEFAULT NULL,
+  `mission_image_id` int(10) UNSIGNED DEFAULT NULL,
+  `vision_image_id` int(10) UNSIGNED DEFAULT NULL,
+  `values_image_id` int(10) UNSIGNED DEFAULT NULL,
+  `approach_image_id` int(10) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `about`
+--
+
+INSERT INTO `about` (`id`, `image_id`, `mission_image_id`, `vision_image_id`, `values_image_id`, `approach_image_id`, `created_at`, `updated_at`) VALUES
+(1, 31, 37, 38, 39, 6, '2019-07-09 22:00:00', '2019-07-22 11:05:32');
 
 -- --------------------------------------------------------
 
@@ -103,7 +110,7 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `email`, `phone`, `phone_alt`, `address_en`, `address_ar`, `location`, `facebook`, `twitter`, `instagram`, `youtube`, `linkedin`, `pintrest`, `behance`, `updated_at`, `created_at`) VALUES
-(1, 'info@allawyfestival.com', '+2009586412', NULL, 'Rayes - Saudi Arabia', 'مركز الرايس التابع لمنطقة المدينة المنورة - المملكة العربية السعودية', NULL, 'https://www.facebook.com', 'https://www.twitter.com', NULL, NULL, NULL, NULL, NULL, '2019-06-24 08:20:48', NULL);
+(1, 'info@allawyfestival.com', '+2009586412', NULL, 'Cairo, Egypt', 'القاهرة, مصر', NULL, 'https://www.facebook.com', 'https://www.twitter.com', 'https://www.instagram.com/allawy_festival/', 'https://www.youtube.com/channel/UCBBgH55Ky7H8tg0RmTe9o9g/featured', NULL, NULL, NULL, '2019-07-22 10:15:08', NULL);
 
 -- --------------------------------------------------------
 
@@ -119,6 +126,29 @@ CREATE TABLE `image` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `image`
+--
+
+INSERT INTO `image` (`id`, `name`, `path`, `album_id`, `created_at`, `updated_at`) VALUES
+(1, '1563784444therachat_dribbble_2.jpg', 'dashboardImages/slider/1563784444therachat_dribbble_2.jpg', NULL, '2019-07-22 06:34:04', '2019-07-22 06:34:04'),
+(2, '1563784553therachat_dribbble_2.jpg', 'dashboardImages/slider/1563784553therachat_dribbble_2.jpg', NULL, '2019-07-22 06:35:53', '2019-07-22 06:35:53'),
+(3, '1563784765therachat_dribbble_2.jpg', 'dashboardImages/slider/1563784765therachat_dribbble_2.jpg', NULL, '2019-07-22 06:39:25', '2019-07-22 06:39:25'),
+(4, '1563784878therachat_dribbble_2.jpg', 'dashboardImages/slider/1563784878therachat_dribbble_2.jpg', NULL, '2019-07-22 06:41:18', '2019-07-22 06:41:18'),
+(5, '1563785015therachat_dribbble_2.jpg', 'dashboardImages/slider/1563785015therachat_dribbble_2.jpg', NULL, '2019-07-22 06:43:35', '2019-07-22 06:43:35'),
+(6, '1563785064picture.png', 'dashboardImages/slider/1563785064picture.png', NULL, '2019-07-22 06:44:24', '2019-07-22 06:44:24'),
+(7, '1563785194picture.png', 'dashboardImages/slider/1563785194picture.png', NULL, '2019-07-22 06:46:34', '2019-07-22 06:46:34'),
+(30, '1563800323118-1188811_psychotherapist-cartoon-psychologist-illustration-mental-psychologist-clipart-png.png', 'dashboardImages/about/1563800323118-1188811_psychotherapist-cartoon-psychologist-illustration-mental-psychologist-clipart-png.png', NULL, '2019-07-22 10:58:43', '2019-07-22 10:58:43'),
+(31, '1563800323Aljanadriyah (1).jpg', 'dashboardImages/about/1563800323Aljanadriyah (1).jpg', NULL, '2019-07-22 10:58:43', '2019-07-22 10:58:43'),
+(32, '1563800323setting.jpg', 'dashboardImages/about/1563800323setting.jpg', NULL, '2019-07-22 10:58:43', '2019-07-22 10:58:43'),
+(33, '1563800565118-1188811_psychotherapist-cartoon-psychologist-illustration-mental-psychologist-clipart-png.png', 'dashboardImages/about/1563800565118-1188811_psychotherapist-cartoon-psychologist-illustration-mental-psychologist-clipart-png.png', NULL, '2019-07-22 11:02:45', '2019-07-22 11:02:45'),
+(34, '1563800565Aljanadriyah (1).jpg', 'dashboardImages/about/1563800565Aljanadriyah (1).jpg', NULL, '2019-07-22 11:02:45', '2019-07-22 11:02:45'),
+(35, '1563800565setting.jpg', 'dashboardImages/about/1563800565setting.jpg', NULL, '2019-07-22 11:02:45', '2019-07-22 11:02:45'),
+(36, '1563800637118-1188811_psychotherapist-cartoon-psychologist-illustration-mental-psychologist-clipart-png.png', 'dashboardImages/about/1563800637118-1188811_psychotherapist-cartoon-psychologist-illustration-mental-psychologist-clipart-png.png', NULL, '2019-07-22 11:03:57', '2019-07-22 11:03:57'),
+(37, '1563800731118-1188811_psychotherapist-cartoon-psychologist-illustration-mental-psychologist-clipart-png.png', 'dashboardImages/about/1563800731118-1188811_psychotherapist-cartoon-psychologist-illustration-mental-psychologist-clipart-png.png', NULL, '2019-07-22 11:05:31', '2019-07-22 11:05:31'),
+(38, '1563800731Aljanadriyah (1).jpg', 'dashboardImages/about/1563800731Aljanadriyah (1).jpg', NULL, '2019-07-22 11:05:31', '2019-07-22 11:05:31'),
+(39, '1563800732setting.jpg', 'dashboardImages/about/1563800732setting.jpg', NULL, '2019-07-22 11:05:32', '2019-07-22 11:05:32');
 
 -- --------------------------------------------------------
 
@@ -174,8 +204,8 @@ INSERT INTO `roles` (`id`, `role`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `service` (
   `id` int(10) NOT NULL,
-  `image_id` int(10) NOT NULL,
-  `video_id` int(10) NOT NULL,
+  `image_id` int(10) DEFAULT NULL,
+  `video_id` int(10) DEFAULT NULL,
   `created_by` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -189,13 +219,19 @@ CREATE TABLE `service` (
 
 CREATE TABLE `setting` (
   `id` int(10) NOT NULL,
-  `logo` int(10) NOT NULL,
+  `logo` int(10) UNSIGNED NOT NULL,
   `status` int(10) NOT NULL DEFAULT '1',
   `default_lang` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'en',
-  `created_by` int(10) NOT NULL,
-  `created_at` int(10) DEFAULT NULL,
-  `updated_at` int(10) DEFAULT NULL
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `setting`
+--
+
+INSERT INTO `setting` (`id`, `logo`, `status`, `default_lang`, `created_at`, `updated_at`) VALUES
+(1, 6, 1, 'en', '2019-07-23 22:00:00', '2019-07-16 22:00:00');
 
 -- --------------------------------------------------------
 
@@ -207,7 +243,7 @@ CREATE TABLE `slider` (
   `id` int(10) NOT NULL,
   `image_id` int(10) UNSIGNED DEFAULT NULL,
   `video_id` int(10) DEFAULT NULL,
-  `url` int(11) DEFAULT NULL,
+  `url` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_by` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -246,7 +282,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `role_id`, `email_verified_at`, `pas
 -- Indexes for table `about`
 --
 ALTER TABLE `about`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `about_image_id` (`image_id`),
+  ADD KEY `misson_image_id` (`mission_image_id`),
+  ADD KEY `vision_image_id` (`vision_image_id`),
+  ADD KEY `values_image_id` (`values_image_id`),
+  ADD KEY `approach_image_id` (`approach_image_id`);
 
 --
 -- Indexes for table `album`
@@ -296,13 +337,15 @@ ALTER TABLE `service`
 -- Indexes for table `setting`
 --
 ALTER TABLE `setting`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `webiste_logo_image_id` (`logo`);
 
 --
 -- Indexes for table `slider`
 --
 ALTER TABLE `slider`
   ADD PRIMARY KEY (`id`),
+  ADD KEY `slide_created_by` (`created_by`),
   ADD KEY `slide_image_id` (`image_id`);
 
 --
@@ -321,7 +364,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `about`
 --
 ALTER TABLE `about`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `album`
@@ -333,7 +376,7 @@ ALTER TABLE `album`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `contact`
@@ -345,7 +388,7 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `message`
@@ -363,19 +406,19 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `service`
 --
 ALTER TABLE `service`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `setting`
 --
 ALTER TABLE `setting`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -386,6 +429,16 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `about`
+--
+ALTER TABLE `about`
+  ADD CONSTRAINT `about_image_id` FOREIGN KEY (`image_id`) REFERENCES `image` (`id`),
+  ADD CONSTRAINT `approach_image_id` FOREIGN KEY (`approach_image_id`) REFERENCES `image` (`id`),
+  ADD CONSTRAINT `misson_image_id` FOREIGN KEY (`mission_image_id`) REFERENCES `image` (`id`),
+  ADD CONSTRAINT `values_image_id` FOREIGN KEY (`values_image_id`) REFERENCES `image` (`id`),
+  ADD CONSTRAINT `vision_image_id` FOREIGN KEY (`vision_image_id`) REFERENCES `image` (`id`);
 
 --
 -- Constraints for table `album`
@@ -400,10 +453,17 @@ ALTER TABLE `image`
   ADD CONSTRAINT `album_id_fk` FOREIGN KEY (`album_id`) REFERENCES `album` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `setting`
+--
+ALTER TABLE `setting`
+  ADD CONSTRAINT `webiste_logo_image_id` FOREIGN KEY (`logo`) REFERENCES `image` (`id`);
+
+--
 -- Constraints for table `slider`
 --
 ALTER TABLE `slider`
-  ADD CONSTRAINT `slide_image_id` FOREIGN KEY (`image_id`) REFERENCES `image` (`id`);
+  ADD CONSTRAINT `slide_created_by` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `slide_image_id` FOREIGN KEY (`image_id`) REFERENCES `image` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `users`
