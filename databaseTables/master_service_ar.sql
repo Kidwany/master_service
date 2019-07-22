@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2019 at 03:39 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Generation Time: Jul 23, 2019 at 01:13 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -45,7 +45,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id`, `about_id`, `mission`, `vision`, `value`, `approach`, `description`, `created_at`, `updated_at`) VALUES
-(2, 1, '<p>Am facing a problem updating user profile for my application. I followed Laracasts&#39;s user profile lesson and am using form model binding. When I filled and submit the form I get &quot;Creating default object from empty value&quot;. I don&#39;t know what am doing wrong. Here is my controller update method:</p>', '<p>Am facing a problem updating user profile for my application. I followed Laracasts&#39;s user profile lesson and am using form model binding. When I filled and submit the form I get &quot;Creating default object from empty value&quot;. I don&#39;t know what am doing wrong. Here is my controller update method:</p>', '<p>Am facing a problem updating user profile for my application. I followed Laracasts&#39;s user profile lesson and am using form model binding. When I filled and submit the form I get &quot;Creating default object from empty value&quot;. I don&#39;t know what am doing wrong. Here is my controller update method:</p>', 'Am facing a problem updating user profile for my application. I followed Laracasts\'s user profile lesson and am using form model binding. When I filled and submit the form I get \"Creating default object from empty value\". I don\'t know what am doing wrong. Here is my controller update method:', 'Am facing a problem updating user profile for my application. I followed Laracasts\'s user profile lesson and am using form model binding. When I filled and submit the form I get \"Creating default object from empty value\". I don\'t know what am doing wrong. Here is my controller update method:', '2019-07-17 22:00:00', '2019-07-22 11:24:03');
+(2, 1, '<p>Am facing a problem updating user profile for my application. I followed Laracasts&#39;s user profile lesson and am using form model binding. When I filled and submit the form I get &quot;Creating default object from empty value&quot;. I don&#39;t know what am doing wrong. Here is my controller update method:</p>', '<p>Am facing a problem updating user profile for my application. I followed Laracasts&#39;s user profile lesson and am using form model binding. When I filled and submit the form I get &quot;Creating default object from empty value&quot;. I don&#39;t know what am doing wrong. Here is my controller update method:</p>', '<p>Am facing a problem updating user profile for my application. I followed Laracasts&#39;s user profile lesson and am using form model binding. When I filled and submit the form I get &quot;Creating default object from empty value&quot;. I don&#39;t know what am doing wrong. Here is my controller update method:</p>', 'Am facing a problem updating user profile for my application. I followed Laracasts\'s user profile lesson and am using form model binding. When I filled and submit the form I get \"Creating default object from empty value\". I don\'t know what am doing wrong. Here is my controller update method:', 'Am facing a problem updating user profile for my application. I followed Laracasts\'s user profile lesson and am using form model binding. When I filled and submit the form I get \"Creating default object from empty value\". I don\'t know what am doing wrong. Here is my controller update method:', '2019-07-17 22:00:00', '2019-07-22 20:59:15');
 
 -- --------------------------------------------------------
 
@@ -74,6 +74,15 @@ CREATE TABLE `client` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `client`
+--
+
+INSERT INTO `client` (`id`, `client_id`, `name`, `created_at`, `updated_at`) VALUES
+(3, 3, 'البنك الأهلي', '2019-07-22 20:44:54', '2019-07-22 20:44:54'),
+(4, 4, 'بنك مصر', '2019-07-22 20:46:10', '2019-07-22 20:46:10'),
+(5, 5, 'بنك البركة', '2019-07-22 20:46:39', '2019-07-22 20:46:39');
 
 -- --------------------------------------------------------
 
@@ -106,6 +115,13 @@ CREATE TABLE `setting` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `setting`
+--
+
+INSERT INTO `setting` (`id`, `setting_id`, `website_name`, `website_description`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Master Service', 'Master ServiceMaster ServiceMaster ServiceMaster ServiceMaster ServiceMaster ServiceMaster ServiceMaster ServiceMaster ServiceMaster Servicezdcd', '2019-07-16 22:00:00', '2019-07-22 20:18:30');
+
 -- --------------------------------------------------------
 
 --
@@ -122,6 +138,13 @@ CREATE TABLE `slider` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `slider`
+--
+
+INSERT INTO `slider` (`id`, `slide_id`, `title`, `sub_title`, `description`, `button`, `created_at`, `updated_at`) VALUES
+(8, 9, 'ascscascsac', NULL, 'scsacsacsac', 'sacsacsacsacsa', '2019-07-22 21:06:12', '2019-07-22 21:06:12');
 
 --
 -- Indexes for dumped tables
@@ -189,7 +212,7 @@ ALTER TABLE `album`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `service`
@@ -201,13 +224,13 @@ ALTER TABLE `service`
 -- AUTO_INCREMENT for table `setting`
 --
 ALTER TABLE `setting`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

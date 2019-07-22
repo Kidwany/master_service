@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2019 at 03:39 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Generation Time: Jul 23, 2019 at 01:13 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,7 +44,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id`, `image_id`, `mission_image_id`, `vision_image_id`, `values_image_id`, `approach_image_id`, `created_at`, `updated_at`) VALUES
-(1, 31, 37, 38, 39, 6, '2019-07-09 22:00:00', '2019-07-22 11:05:32');
+(1, 57, 37, 38, 39, 6, '2019-07-09 22:00:00', '2019-07-22 20:59:15');
 
 -- --------------------------------------------------------
 
@@ -80,6 +80,15 @@ CREATE TABLE `client` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `client`
+--
+
+INSERT INTO `client` (`id`, `image_id`, `created_by`, `created_at`, `updated_at`) VALUES
+(3, 48, 2, '2019-07-22 20:44:54', '2019-07-22 20:44:54'),
+(4, 49, 2, '2019-07-22 20:46:09', '2019-07-22 20:46:09'),
+(5, 50, 2, '2019-07-22 20:46:39', '2019-07-22 20:46:39');
+
 -- --------------------------------------------------------
 
 --
@@ -110,7 +119,32 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `email`, `phone`, `phone_alt`, `address_en`, `address_ar`, `location`, `facebook`, `twitter`, `instagram`, `youtube`, `linkedin`, `pintrest`, `behance`, `updated_at`, `created_at`) VALUES
-(1, 'info@allawyfestival.com', '+2009586412', NULL, 'Cairo, Egypt', 'القاهرة, مصر', NULL, 'https://www.facebook.com', 'https://www.twitter.com', 'https://www.instagram.com/allawy_festival/', 'https://www.youtube.com/channel/UCBBgH55Ky7H8tg0RmTe9o9g/featured', NULL, NULL, NULL, '2019-07-22 10:15:08', NULL);
+(1, 'info@master-service.com', '+2009586412', NULL, 'Cairo, Egypt', 'القاهرة, مصر', NULL, 'https://www.facebook.com', 'https://www.twitter.com', 'https://www.instagram.com/allawy_festival/', 'https://www.youtube.com/channel/UCBBgH55Ky7H8tg0RmTe9o9g/featured', NULL, NULL, NULL, '2019-07-22 20:37:41', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gallery`
+--
+
+CREATE TABLE `gallery` (
+  `id` int(10) NOT NULL,
+  `image_id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `gallery`
+--
+
+INSERT INTO `gallery` (`id`, `image_id`, `created_at`, `updated_at`) VALUES
+(5, 51, '2019-07-22 20:50:15', '2019-07-22 20:50:15'),
+(6, 52, '2019-07-22 20:50:15', '2019-07-22 20:50:15'),
+(7, 53, '2019-07-22 20:50:15', '2019-07-22 20:50:15'),
+(8, 54, '2019-07-22 20:50:15', '2019-07-22 20:50:15'),
+(9, 55, '2019-07-22 20:50:15', '2019-07-22 20:50:15'),
+(10, 56, '2019-07-22 20:50:15', '2019-07-22 20:50:15');
 
 -- --------------------------------------------------------
 
@@ -148,7 +182,22 @@ INSERT INTO `image` (`id`, `name`, `path`, `album_id`, `created_at`, `updated_at
 (36, '1563800637118-1188811_psychotherapist-cartoon-psychologist-illustration-mental-psychologist-clipart-png.png', 'dashboardImages/about/1563800637118-1188811_psychotherapist-cartoon-psychologist-illustration-mental-psychologist-clipart-png.png', NULL, '2019-07-22 11:03:57', '2019-07-22 11:03:57'),
 (37, '1563800731118-1188811_psychotherapist-cartoon-psychologist-illustration-mental-psychologist-clipart-png.png', 'dashboardImages/about/1563800731118-1188811_psychotherapist-cartoon-psychologist-illustration-mental-psychologist-clipart-png.png', NULL, '2019-07-22 11:05:31', '2019-07-22 11:05:31'),
 (38, '1563800731Aljanadriyah (1).jpg', 'dashboardImages/about/1563800731Aljanadriyah (1).jpg', NULL, '2019-07-22 11:05:31', '2019-07-22 11:05:31'),
-(39, '1563800732setting.jpg', 'dashboardImages/about/1563800732setting.jpg', NULL, '2019-07-22 11:05:32', '2019-07-22 11:05:32');
+(39, '1563800732setting.jpg', 'dashboardImages/about/1563800732setting.jpg', NULL, '2019-07-22 11:05:32', '2019-07-22 11:05:32'),
+(40, '1563823156picture.png', 'dashboardImages/setting/1563823156picture.png', NULL, '2019-07-22 17:19:16', '2019-07-22 17:19:16'),
+(41, '1563828033picture.png', 'dashboardImages/gallery/1563828033picture.png', NULL, '2019-07-22 18:40:33', '2019-07-22 18:40:33'),
+(42, '1563828033user.png', 'dashboardImages/gallery/1563828033user.png', NULL, '2019-07-22 18:40:33', '2019-07-22 18:40:33'),
+(47, '1563833910logo.png', 'dashboardImages/setting/1563833910logo.png', NULL, '2019-07-22 20:18:30', '2019-07-22 20:18:30'),
+(48, '15638354942.png', 'dashboardImages/client/15638354942.png', NULL, '2019-07-22 20:44:54', '2019-07-22 20:44:54'),
+(49, '15638355693.png', 'dashboardImages/client/15638355693.png', NULL, '2019-07-22 20:46:09', '2019-07-22 20:46:09'),
+(50, '15638355984.png', 'dashboardImages/client/15638355984.png', NULL, '2019-07-22 20:46:38', '2019-07-22 20:46:38'),
+(51, '15638358151.jpg', 'dashboardImages/gallery/15638358151.jpg', NULL, '2019-07-22 20:50:15', '2019-07-22 20:50:15'),
+(52, '15638358152.jpg', 'dashboardImages/gallery/15638358152.jpg', NULL, '2019-07-22 20:50:15', '2019-07-22 20:50:15'),
+(53, '15638358153.jpg', 'dashboardImages/gallery/15638358153.jpg', NULL, '2019-07-22 20:50:15', '2019-07-22 20:50:15'),
+(54, '15638358154.jpg', 'dashboardImages/gallery/15638358154.jpg', NULL, '2019-07-22 20:50:15', '2019-07-22 20:50:15'),
+(55, '15638358155.jpg', 'dashboardImages/gallery/15638358155.jpg', NULL, '2019-07-22 20:50:15', '2019-07-22 20:50:15'),
+(56, '15638358156.jpg', 'dashboardImages/gallery/15638358156.jpg', NULL, '2019-07-22 20:50:15', '2019-07-22 20:50:15'),
+(57, '1563836355mission.png', 'dashboardImages/about/1563836355mission.png', NULL, '2019-07-22 20:59:15', '2019-07-22 20:59:15'),
+(58, '1563836772slide-1.jpg', 'dashboardImages/slider/1563836772slide-1.jpg', NULL, '2019-07-22 21:06:12', '2019-07-22 21:06:12');
 
 -- --------------------------------------------------------
 
@@ -165,13 +214,6 @@ CREATE TABLE `message` (
   `message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `message`
---
-
-INSERT INTO `message` (`id`, `name`, `email`, `phone`, `title`, `message`, `created_at`) VALUES
-(3, 'Kidoo', 'kidoo@gmail.com', '0111996253', '', 'vasdv sadbasfv snkvbhjsd jsdbch  dhc', NULL);
 
 -- --------------------------------------------------------
 
@@ -231,7 +273,7 @@ CREATE TABLE `setting` (
 --
 
 INSERT INTO `setting` (`id`, `logo`, `status`, `default_lang`, `created_at`, `updated_at`) VALUES
-(1, 6, 1, 'en', '2019-07-23 22:00:00', '2019-07-16 22:00:00');
+(1, 47, 0, 'en', '2019-07-23 22:00:00', '2019-07-22 20:18:30');
 
 -- --------------------------------------------------------
 
@@ -248,6 +290,13 @@ CREATE TABLE `slider` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `slider`
+--
+
+INSERT INTO `slider` (`id`, `image_id`, `video_id`, `url`, `created_by`, `created_at`, `updated_at`) VALUES
+(9, 58, NULL, 'https://www.google.com/search?q=detach+laravel&oq=detach+la&aqs=chrome.1.69i57j0l5.6068j0j7&sourceid=chrome&ie=UTF-8', 2, '2019-07-22 21:06:12', '2019-07-22 21:06:12');
 
 -- --------------------------------------------------------
 
@@ -307,6 +356,13 @@ ALTER TABLE `client`
 --
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gallery`
+--
+ALTER TABLE `gallery`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `gallery_image_id` (`image_id`);
 
 --
 -- Indexes for table `image`
@@ -376,7 +432,7 @@ ALTER TABLE `album`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `contact`
@@ -385,10 +441,16 @@ ALTER TABLE `contact`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `gallery`
+--
+ALTER TABLE `gallery`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `message`
@@ -418,7 +480,7 @@ ALTER TABLE `setting`
 -- AUTO_INCREMENT for table `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -445,6 +507,12 @@ ALTER TABLE `about`
 --
 ALTER TABLE `album`
   ADD CONSTRAINT `album_created_by_user` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `gallery`
+--
+ALTER TABLE `gallery`
+  ADD CONSTRAINT `gallery_image_id` FOREIGN KEY (`image_id`) REFERENCES `image` (`id`);
 
 --
 -- Constraints for table `image`
