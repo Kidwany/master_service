@@ -68,7 +68,7 @@
                         <p>Message</p>
                     </div>
                     <div class="icon">
-                        <i class="fa fa-graduation-cap"></i>
+                        <i class="fa fa-envelope"></i>
                     </div>
                     <a href="{{adminUrl('message')}}" class="small-box-footer">
                         More info <i class="fa fa-arrow-circle-right"></i>
@@ -78,19 +78,19 @@
             <!-- ./col -->
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
-                {{--<div class="small-box bg-red">
+                <div class="small-box bg-red">
                     <div class="inner">
-                        <h3></h3>
+                        <h3>{{$testimonialsCount}}</h3>
 
-                        <p>Subjects</p>
+                        <p>Testimonials</p>
                     </div>
                     <div class="icon">
-                        <i class="fa fa-book"></i>
+                        <i class="fa fa-quote-left"></i>
                     </div>
-                    <a href="{{url('admin/subjects')}}" class="small-box-footer">
+                    <a href="{{adminUrl('testimonial')}}" class="small-box-footer">
                         More info <i class="fa fa-arrow-circle-right"></i>
                     </a>
-                </div>--}}
+                </div>
             </div>
             <!-- ./col -->
         </div>
@@ -190,9 +190,9 @@
                                 <div class="small-box shortcut_div">
                                     <div class="inner">
                                         <div class="text-center shortcut_img">
-                                            <a href="http://webdesign.be4em.info/ahmedelnabiladmin/news/add"><img src="{{asset('dashboard/img/slider.png')}}" class="img-responsive"></a>
+                                            <a href="{{adminUrl('gallery/create')}}"><img src="{{asset('dashboard/img/slider.png')}}" class="img-responsive"></a>
                                         </div>
-                                        <h3 class="text-center"><a href="http://webdesign.be4em.info/ahmedelnabiladmin/news/add">Add Image to Gallery</a></h3>
+                                        <h3 class="text-center"><a href="{{adminUrl('gallery/create')}}">Add Image to Gallery</a></h3>
                                     </div>
                                 </div>
                             </div>

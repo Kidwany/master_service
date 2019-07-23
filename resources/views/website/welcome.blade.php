@@ -131,15 +131,7 @@
         </div>
         <div class="section-text">
             <div class="section-heading">
-                <p>
-                    A few words about
-                    <span>
-            master
-          </span>
-                    <span>
-            service
-          </span>
-                </p>
+                {!! __('trans.about_title') !!}
             </div>
             <div class="text">
                 <p>
@@ -155,95 +147,35 @@
     <div class="home-services-section">
         <div class="section-heading">
             <p>
-                Our Services
+                {!! __('trans.services_title') !!}
             </p>
         </div>
 
         <div class="section-body">
             <ul class="main-section-ul">
-                <li data-aos="zoom-in" data-aos-duration="1500">
-                    <a href="./service-details.html">
-                        <div class="service-img">
-                            <img src="./images/services/service-1/1.jpg" alt="img">
-                        </div>
-                        <div class="service-body">
-                            <div class="service-heading">
-                                <p>
-                                    DECORATIONS MANUFACTURING
-                                </p>
-                            </div>
-                            <div class="service-text">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus quo maiores vitae dolorum
-                                    omnis
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li data-aos="zoom-in" data-aos-duration="1500">
-                    <a href="./service-details.html">
-                        <div class="service-img">
-                            <img src="./images/services/service-2/1.jpg" alt="img">
-                        </div>
-                        <div class="service-body">
-                            <div class="service-heading">
-                                <p>
-                                    MANUFACTURING AND WRAPPING ILLUMINATED LETTERS
-                                </p>
-                            </div>
-                            <div class="service-text">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsam perferendis voluptates
-                                    aliquam
-                                    corporis vel in quia placeat veniam reprehenderit. Rerum aspernatur non
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li data-aos="zoom-in" data-aos-duration="1500">
-                    <a href="./service-details.html">
-                        <div class="service-img">
-                            <img src="./images/services/service-3/1.jpg" alt="img">
-                        </div>
-                        <div class="service-body">
-                            <div class="service-heading">
-                                <p>
-                                    MANUFACTURING ILLUMINATED BILLBOARDS
-                                </p>
-                            </div>
-                            <div class="service-text">
-                                <p>
-                                    Minima ipsam perferendis voluptates aliquam corporis vel in quia placeat veniam reprehenderit.
-                                    Rerum
-                                    aspernatur non
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li data-aos="zoom-in" data-aos-duration="1500">
-                    <a href="./service-details.html">
-                        <div class="service-img">
-                            <img src="./images/services/service-4/1.jpg" alt="img">
-                        </div>
-                        <div class="service-body">
-                            <div class="service-heading">
-                                <p>
-                                    STAND WALL DISPLAY
-                                </p>
-                            </div>
-                            <div class="service-text">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ipsam perferendis voluptates
-                                    aliquam
-                                    corporis vel in quia placeat veniam reprehenderit. Rerum aspernatur non
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </li>
+                @if($services)
+                    @foreach($services as $service)
+                        <li data-aos="zoom-in" data-aos-duration="1500">
+                            <a href="{{url('serviceDetails/'.$service->id)}}">
+                                <div class="service-img">
+                                    <img src="{{asset($service->image->path)}}" alt="img">
+                                </div>
+                                <div class="service-body">
+                                    <div class="service-heading">
+                                        <p>
+                                            {{$service->{'service_'.currentLang()}->title }}
+                                        </p>
+                                    </div>
+                                    <div class="service-text">
+                                        <p>
+                                            {{str_limit($service->{'service_'.currentLang()}->description, 200, '...')  }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    @endforeach
+                @endif
             </ul>
         </div>
 
@@ -328,75 +260,75 @@
         <ul class="main-section-ul">
             <li data-aos="zoom-in" data-aos-duration="1500">
                 <div class="counter-img">
-                    <img src="./images/counter/medal.png" alt="img">
+                    <img src="{{asset('website/images/counter/medal.png')}}" alt="img">
                 </div>
                 <div class="counter-body">
                     <div class="number-div">
-            <span class="counter-number">
-              15
-            </span>
+                        <span class="counter-number">
+                            15
+                        </span>
                         <span>
-              Yr
-            </span>
+                            Yr
+                        </span>
                         <span class="feather icon-plus"></span>
                     </div>
                     <div class="counter-title">
                         <p>
-                            Experience
+                            {!! __('trans.experience') !!}
                         </p>
                     </div>
                 </div>
             </li>
             <li data-aos="zoom-in" data-aos-duration="1500">
                 <div class="counter-img">
-                    <img src="./images/counter/happy.png" alt="img">
+                    <img src="{{asset('website/images/counter/happy.png')}}" alt="img">
                 </div>
                 <div class="counter-body">
                     <div class="number-div">
-            <span class="counter-number">
-              310
-            </span>
+                        <span class="counter-number">
+                            310
+                        </span>
                         <span class="feather icon-plus"></span>
                     </div>
                     <div class="counter-title">
                         <p>
-                            Happy Clients
+                            {!! __('trans.happy_clients') !!}
                         </p>
                     </div>
                 </div>
             </li>
             <li data-aos="zoom-in" data-aos-duration="1500">
                 <div class="counter-img">
-                    <img src="./images/counter/staff.png" alt="img">
+                    <img src="{{asset('website/images/counter/staff.png')}}" alt="img">
                 </div>
                 <div class="counter-body">
                     <div class="number-div">
-            <span class="counter-number">
-              280
-            </span>
+                        <span class="counter-number">
+                            280
+                        </span>
                         <span class="feather icon-plus"></span>
                     </div>
                     <div class="counter-title">
                         <p>
-                            Staff
+                            {!! __('trans.staff') !!}
                         </p>
                     </div>
                 </div>
             </li>
             <li data-aos="zoom-in" data-aos-duration="1500">
                 <div class="counter-img">
-                    <img src="./images/counter/projects.png" alt="img">
+                    <img src="{{asset('website/images/counter/projects.png')}}" alt="img">
                 </div>
                 <div class="counter-body">
                     <div class="number-div">
-            <span class="counter-number">
-              3201
-            </span>
+                        <span class="counter-number">
+                            3201
+                        </span>
                         <span class="feather icon-plus"></span>
                     </div>
                     <div class="counter-title">
                         <p>
-                            Projects
+                            {!! __('trans.projects') !!}
                         </p>
                     </div>
                 </div>
@@ -424,121 +356,39 @@
     <!-- end gallery section -->
 
 
-    <!-- testmonicals section -->
+    <!-- testmonials section -->
     <div class="testmonials-section">
         <div class="container">
             <div class="section-heading">
                 <p>
-                    Testmonials
+                    {!! __('trans.testimonials_title') !!}
                 </p>
             </div>
             <div class="swiper-container home-testmonials-slider">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="slider-text">
-                            <div class="text">
-                                <p>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio dolorem esse corporis exercitationem
-                                    ipsa itaque natus eaque expedita est adipisci vel, dicta illum porro nostrum, voluptatibus
-                                    reprehenderit dolor, maiores quas!
-                                </p>
+                    @if($testimonials)
+                        @foreach($testimonials as $testimonial)
+                            <div class="swiper-slide">
+                                <div class="slider-text">
+                                    <div class="text">
+                                        <p>
+                                            {{$testimonial->{'testimonial_'.currentLang()}->text }}
+                                        </p>
+                                    </div>
+                                    <div class="name">
+                                        <p>
+                                            {{$testimonial->{'testimonial_'.currentLang()}->username }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- quotes -->
+                                <div class="quotes">
+                                    <i class="la la-quote-right"></i>
+                                    <!-- <i class="la la-quote-left"></i> -->
+                                </div>
                             </div>
-                            <div class="name">
-                                <p>
-                                    Ahmed Ali
-                                </p>
-                            </div>
-                        </div>
-                        <!-- quotes -->
-                        <div class="quotes">
-                            <i class="la la-quote-right"></i>
-                            <!-- <i class="la la-quote-left"></i> -->
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slider-text">
-                            <div class="text">
-                                <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque voluptate iusto illo eligendi
-                                    nulla est doloribus accusantium ducimus quo blanditiis, sapiente debitis ipsum distinctio quos nam
-                                    temporibus. Qui, soluta consectetur.
-                                </p>
-                            </div>
-                            <div class="name">
-                                <p>
-                                    Ramy Mahmoud
-                                </p>
-                            </div>
-                        </div>
-                        <!-- quotes -->
-                        <div class="quotes">
-                            <i class="la la-quote-right"></i>
-                            <!-- <i class="la la-quote-left"></i> -->
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slider-text">
-                            <div class="text">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque omnis delectus eligendi quae! Quae aut
-                                    cumque natus reiciendis excepturi sequi voluptatem, aliquam suscipit magnam eum pariatur, perferendis
-                                    adipisci distinctio repellat!
-                                </p>
-                            </div>
-                            <div class="name">
-                                <p>
-                                    Shaker Ahmed
-                                </p>
-                            </div>
-                        </div>
-                        <!-- quotes -->
-                        <div class="quotes">
-                            <i class="la la-quote-right"></i>
-                            <!-- <i class="la la-quote-left"></i> -->
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slider-text">
-                            <div class="text">
-                                <p>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse natus fugit praesentium sequi dicta ab
-                                    debitis fuga labore similique suscipit aperiam dolores, consequuntur sit! Pariatur sit amet odio ab
-                                    consequuntur?
-                                </p>
-                            </div>
-                            <div class="name">
-                                <p>
-                                    fady ali
-                                </p>
-                            </div>
-                        </div>
-                        <!-- quotes -->
-                        <div class="quotes">
-                            <i class="la la-quote-right"></i>
-                            <!-- <i class="la la-quote-left"></i> -->
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slider-text">
-                            <div class="text">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti laudantium eius voluptate mollitia
-                                    eligendi at consectetur minima, assumenda illum ducimus ut similique fugit iure dolores quo accusamus
-                                    cum laboriosam animi.
-                                </p>
-                            </div>
-                            <div class="name">
-                                <p>
-                                    Kareem Ahmed
-                                </p>
-                            </div>
-                        </div>
-                        <!-- quotes -->
-                        <div class="quotes">
-                            <i class="la la-quote-right"></i>
-                            <!-- <i class="la la-quote-left"></i> -->
-                        </div>
-                    </div>
+                        @endforeach
+                    @endif
                 </div>
 
                 <div class="testmonials-slider-buttons">
@@ -561,7 +411,7 @@
     <div class="clients-section">
         <div class="section-heading">
             <p>
-                Our Clients
+                {!! __('trans.clients_title') !!}
             </p>
         </div>
         <div class="swiper-container home-clients-slider">

@@ -9,7 +9,9 @@ use App\Contact;
 use App\Gallery;
 use App\Image;
 use App\Message;
+use App\Service;
 use App\Slider;
+use App\Testimonial;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,10 +22,11 @@ class WebsitePagesController extends Controller
 {
     public function index()
     {
-        $clients = Client::with('image', 'client_en', 'client_ar')->get();
+        $clients = Client::with('image', 'client_'.currentLang())->get();
         $images = Gallery::with('image')->get();
-        $slides = Slider::with('slider_en', 'slider_ar', 'image')->get();
-        return view('website.welcome', compact('clients', 'images', 'slides'));
+        $slides = Slider::with('slider_'.currentLang(), 'image')->get();
+        $testimonials = Testimonial::with('testimonial_'.currentLang())->limit(6)->orderBy('created_at' ,'desc')->get();
+        return view('website.welcome', compact('clients', 'images', 'slides', 'testimonials'));
     }
 
     public function about()
@@ -34,9 +37,8 @@ class WebsitePagesController extends Controller
 
     public function gallery()
     {
-        $albums = Album::all();
-        $images = Image::with('album')->get();
-        return view('website.gallery', compact('albums', 'images'));
+        $images = Gallery::with('image')->get();
+        return view('website.gallery', compact( 'images'));
     }
 
     public function albums($id)
@@ -58,6 +60,7 @@ class WebsitePagesController extends Controller
         $this->validate($request,[
             'email'         => 'bail|required|email|max:100',
             'phone'         => 'bail|required|min:8|max:14',
+            'title'         => 'bail|required|max:150',
             'name'          => 'bail|required|max:100',
             'message'       => 'bail|required|min:30|max:500',
         ], [], [
@@ -71,6 +74,7 @@ class WebsitePagesController extends Controller
         $message->name = $input['name'];
         $message->email = $input['email'];
         $message->phone = $input['phone'];
+        $message->title = $input['title'];
         $message->message = $input['message'];
 
         $message->save();
@@ -78,35 +82,24 @@ class WebsitePagesController extends Controller
 
         return redirect('contact');
     }
-
+/*
     public function service()
     {
         $shows = Show::with('ThumbImg', 'mainImg')->get();
         return view('website.shows', compact('shows'));
-    }
+    }*/
 
     public function serviceDetails($id)
     {
-        $show = Show::find($id);
-        if ($show)
-        {
-            $todayDate = Carbon::now();
-            $upcoming = Show::where('date', '>', $todayDate)->where('id', '!=', $id)->limit(3)->get();
-            $next = Show::where('id', '>', $show->id)->orderBy('id')->first();
-            $previous = Show::where('id', '<', $show->id)->orderBy('id', 'desc')->first();
-            return view('website.showDetails', compact('show', 'upcoming', 'next', 'previous'));
-        }
-        else
-        {
-            return view('website.404');
-        }
+        $service = Service::with('image', 'service_'.currentLang())->find($id);
+        return view('website.service_details', compact('service'));
     }
 
-    public function sponsors()
-    {
-        $sponsors = Sponsor::with('image')->get();
-        return view('website.sponsors', compact('sponsors'));
-    }
+//    public function sponsors()
+//    {
+//        $sponsors = Sponsor::with('image')->get();
+//        return view('website.sponsors', compact('sponsors'));
+//    }
 }
 
 

@@ -18,7 +18,7 @@
             <div class="section-two">
                 <div class="section-heading">
                     <p>
-                        Quick links
+                        {!! __('trans.quick_links') !!}
                     </p>
                 </div>
                 <div class="section-body">
@@ -26,28 +26,28 @@
                         <li>
                             <a href="{{url('/')}}">
                                 <span>
-                                    Home
+                                    {!! __('trans.home') !!}
                                 </span>
                             </a>
                         </li>
                         <li>
                             <a href="{{url('gallery')}}">
                                 <span>
-                                    Gallery
+                                    {!! __('trans.gallery') !!}
                                 </span>
                             </a>
                         </li>
                         <li>
                             <a href="{{url('contact')}}">
                                 <span>
-                                    Contact Us
+                                    {!! __('trans.contact') !!}
                                 </span>
                             </a>
                         </li>
                         <li>
                             <a href="{{url('about')}}">
                                 <span>
-                                    About Us
+                                    {!! __('trans.about') !!}
                                 </span>
                             </a>
                         </li>
@@ -57,7 +57,7 @@
             <div class="section-three">
                 <div class="section-heading">
                     <p>
-                        i          Contacts
+                        i          {!! __('trans.contact_info') !!}
                     </p>
                 </div>
                 <div class="section-body">
@@ -65,7 +65,7 @@
                         <li>
                             <div class="phone">
                                 <span>
-                                    Phone
+                                    {!! __('trans.phone') !!}
                                 </span>
                                 <div>
                                     <i class="feather icon-phone-call"></i>
@@ -76,7 +76,7 @@
                             </div>
                             <div class="address">
                                 <span>
-                                    Location
+                                    {!! __('trans.location') !!}
                                 </span>
                                 <div>
                                     <i class="feather icon-map-pin"></i>
@@ -87,7 +87,7 @@
                             </div>
                             <div class="email">
                                 <span>
-                                    Email Address
+                                    {!! __('trans.email') !!}
                                 </span>
                                 <div>
                                     <i class="feather icon-mail"></i>
@@ -161,7 +161,7 @@
         <div class="container">
             <p>
                 <!-- 2019 &copy; جميع الحقوق محفوظة لشركة بى جروب -->
-                2019 &copy Begroup All rights reserved
+                {!! __('trans.copy_rights') !!}2019 &copy Begroup All rights reserved
             </p>
         </div>
     </div>

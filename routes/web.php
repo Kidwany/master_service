@@ -13,10 +13,6 @@
 
 
 
-Route::get('maintenance', function () {
-    return 'maintenance';
-});
-
 /*==============================================   Dashboard Routes    ====================================================*/
 
 
@@ -36,6 +32,9 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Dashboard'], function () {
 
     /* -- Return Message Page -- */
     Route::resource('/masterServiceAdmin/message', 'MessageController');
+
+    /* -- Return Testimonial Page -- */
+    Route::resource('/masterServiceAdmin/testimonial', 'TestimonialController');
 
     /* -- Return Gallery Page -- */
     Route::resource('/masterServiceAdmin/gallery', 'GalleryController');
@@ -86,6 +85,12 @@ Route::group(['middleware' => ['Maintenance', 'Lang']], function () {
         return view('website.404');
     });
 
+});
+
+
+
+Route::get('maintenance', function () {
+    return 'maintenance';
 });
 
 Route::get('/masterServiceAdmin/login', 'Auth\LoginController@loginView');

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2019 at 01:13 AM
+-- Generation Time: Jul 23, 2019 at 02:52 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -45,7 +45,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id`, `about_id`, `mission`, `vision`, `value`, `approach`, `description`, `created_at`, `updated_at`) VALUES
-(1, 1, '<p>Am facing a problem updating user profile for my application. I followed Laracasts&#39;s user profile lesson and am using form model binding. When I filled and submit the form I get &quot;Creating default object from empty value&quot;. I don&#39;t know what am doing wrong. Here is my controller update method:</p>', '<p>Am facing a problem updating user profile for my application. I followed Laracasts&#39;s user profile lesson and am using form model binding. When I filled and submit the form I get &quot;Creating default object from empty value&quot;. I don&#39;t know what am doing wrong. Here is my controller update method:</p>', '<p>Am facing a problem updating user profile for my application. I followed Laracasts&#39;s user profile lesson and am using form model binding. When I filled and submit the form I get &quot;Creating default object from empty value&quot;. I don&#39;t know what am doing wrong. Here is my controller update ==========</p>', 'Am facing a problem updating user profile for my application. I followed Laracasts\'s user profile lesson and am using form model binding. When I filled and submit the form I get \"Creating default object from empty value\". I don\'t know what am doing wrong. Here is my controller update method:', 'We take a multifaceted approach to health care that allows us to provide superior care, across multiple disciplines, to treat the whole person. Our services include family medicine, dentistry, behavioral health, and a full-service pharmacy, all under one roof.\r\n\r\nWe take a multifaceted approach to health care that allows us to provide superior care, across multiple disciplines, to treat the whole person. Our services include family medicine, dentistry, behavioral health, and a full-service pharmacy, all under one roof.', '2019-07-17 22:00:00', '2019-07-22 20:59:15');
+(1, 1, 'Am facing a problem updating user profile for my application. I followed Laracasts&#39;s user profile lesson and am using form model binding. When I filled and submit the form I get &quot;Creating default object from empty value&quot;. I don&#39;t know what am doing wrong. Here is my controller update method', '<p>Am facing a problem updating user profile for my application. I followed Laracasts&#39;s user profile lesson and am using form model binding. When I filled and submit the form I get &quot;Creating default object from empty value&quot;. I don&#39;t know what am doing wrong. Here is my controller update method:</p>', '<p>Am facing a problem updating user profile for my application. I followed Laracasts&#39;s user profile lesson and am using form model binding. When I filled and submit the form I get &quot;Creating default object from empty value&quot;. I don&#39;t know what am doing wrong. Here is my controller update ==========</p>', 'Am facing a problem updating user profile for my application. I followed Laracasts\'s user profile lesson and am using form model binding. When I filled and submit the form I get \"Creating default object from empty value\". I don\'t know what am doing wrong. Here is my controller update method:', 'We take a multifaceted approach to health care that allows us to provide superior care, across multiple disciplines, to treat the whole person. Our services include family medicine, dentistry, behavioral health, and a full-service pharmacy, all under one roof.\r\n\r\nWe take a multifaceted approach to health care that allows us to provide superior care, across multiple disciplines, to treat the whole person. Our services include family medicine, dentistry, behavioral health, and a full-service pharmacy, all under one roof.', '2019-07-17 22:00:00', '2019-07-23 09:04:21');
 
 -- --------------------------------------------------------
 
@@ -100,6 +100,13 @@ CREATE TABLE `service` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `service`
+--
+
+INSERT INTO `service` (`id`, `service_id`, `title`, `slug`, `description`, `created_at`, `updated_at`) VALUES
+(4, 7, 'Manufacturing and Wrapping Illuminated Letters', 'Manufacturing and Wrapping Illuminated Letters', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and', '2019-07-23 08:14:41', '2019-07-23 08:28:43');
+
 -- --------------------------------------------------------
 
 --
@@ -120,7 +127,7 @@ CREATE TABLE `setting` (
 --
 
 INSERT INTO `setting` (`id`, `setting_id`, `website_name`, `website_description`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Master Service', 'Master ServiceMaster ServiceMaster ServiceMaster ServiceMaster ServiceMaster ServiceMaster ServiceMaster ServiceMaster ServiceMaster', '2019-07-30 22:00:00', '2019-07-22 20:18:30');
+(1, 1, 'Master Service', 'Master ServiceMaster ServiceMaster ServiceMaster ServiceMaster ServiceMaster ServiceMaster ServiceMaster ServiceMaster ServiceMaster', '2019-07-30 22:00:00', '2019-07-23 08:46:44');
 
 -- --------------------------------------------------------
 
@@ -145,6 +152,30 @@ CREATE TABLE `slider` (
 
 INSERT INTO `slider` (`id`, `slide_id`, `title`, `sub_title`, `description`, `button`, `created_at`, `updated_at`) VALUES
 (8, 9, 'New Banking', NULL, 'Better Master Services For Better World', 'download brochure', '2019-07-22 21:06:12', '2019-07-22 21:06:12');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testimonial`
+--
+
+CREATE TABLE `testimonial` (
+  `id` int(10) NOT NULL,
+  `testimonial_id` int(10) NOT NULL,
+  `username` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `testimonial`
+--
+
+INSERT INTO `testimonial` (`id`, `testimonial_id`, `username`, `text`, `created_at`, `updated_at`) VALUES
+(2, 2, 'Mohamed Kidwany', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2019-07-23 08:02:57', '2019-07-23 08:11:40'),
+(3, 3, 'Ahmed Fathi', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2019-07-23 08:03:31', '2019-07-23 08:11:48'),
+(4, 4, 'Ameer Ahmed', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2019-07-23 08:04:06', '2019-07-23 08:11:52');
 
 --
 -- Indexes for dumped tables
@@ -193,6 +224,13 @@ ALTER TABLE `slider`
   ADD KEY `slide_id_en` (`slide_id`);
 
 --
+-- Indexes for table `testimonial`
+--
+ALTER TABLE `testimonial`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `testimonial_en_fk` (`testimonial_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -218,7 +256,7 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT for table `service`
 --
 ALTER TABLE `service`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `setting`
@@ -231,6 +269,12 @@ ALTER TABLE `setting`
 --
 ALTER TABLE `slider`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `testimonial`
+--
+ALTER TABLE `testimonial`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -271,6 +315,12 @@ ALTER TABLE `setting`
 --
 ALTER TABLE `slider`
   ADD CONSTRAINT `slide_id_en` FOREIGN KEY (`slide_id`) REFERENCES `master_service`.`slider` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `testimonial`
+--
+ALTER TABLE `testimonial`
+  ADD CONSTRAINT `testimonial_en_fk` FOREIGN KEY (`testimonial_id`) REFERENCES `master_service`.`testimonial` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

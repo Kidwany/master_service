@@ -24,9 +24,9 @@ class LayoutsComposer
 
         //retrieve Projects in footer
         $footerContact = Contact::orderby('id', 'desc')->first();
-        $footerAbout = About::with('about_en', 'about_ar')->orderBy('created_at', 'desc')->first();
-        $services = Service::with('service_en', 'service_ar', 'image')->get();
-        $setting = Setting::with('setting_en', 'setting_ar', 'image')->orderBy('created_at', 'desc')->first();
+        $footerAbout = About::with('about_'.currentLang())->orderBy('created_at', 'desc')->first();
+        $services = Service::with('service_'.currentLang(), 'image')->get();
+        $setting = Setting::with('setting_'.currentLang(), 'image')->orderBy('created_at', 'desc')->first();
 
         $view->with('footerContact', $footerContact)
                 ->with('footerAbout', $footerAbout)

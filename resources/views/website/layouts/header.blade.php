@@ -61,14 +61,14 @@
             <li class="active-li">
                 <a href="{{url('/')}}">
             <span>
-              Home
+              {!! __('trans.home') !!}
             </span>
                 </a>
             </li>
             <li class="drop-li">
                 <a href="" class="drop-a">
             <span>
-              Services
+              {!! __('trans.services') !!}
             </span>
                     <i class="feather icon-chevron-down"></i>
                 </a>
@@ -91,21 +91,21 @@
             <li>
                 <a href="{{url('gallery')}}">
                     <span>
-                        gallery
+                        {!! __('trans.gallery') !!}
                     </span>
                 </a>
             </li>
             <li>
                 <a href="{{url('contact')}}">
                     <span>
-                        Contact Us
+                        {!! __('trans.contact') !!}
                     </span>
                 </a>
             </li>
             <li>
                 <a href="{{url('about')}}">
                     <span>
-                        About Us
+                        {!! __('trans.about') !!}
                     </span>
                 </a>
             </li>
@@ -126,14 +126,14 @@
             <li class="active-li">
                 <a href="{{url('/')}}">
             <span>
-              Home
+              {!! __('trans.home') !!}
             </span>
                 </a>
             </li>
             <li class="hover-li">
                 <a class="hover-a">
             <span>
-              Services
+              {!! __('trans.services') !!}
             </span>
                     <i class="lnr lnr-chevron-down"></i>
                 </a>
@@ -154,7 +154,7 @@
             <li>
                 <a href="{{url('gallery')}}">
                     <span>
-                        gallery
+                         {!! __('trans.gallery') !!}
                     </span>
                 </a>
             </li>
@@ -166,14 +166,14 @@
             <li>
                 <a href="{{url('contact')}}">
                     <span>
-                        Contact Us
+                        {!! __('trans.contact') !!}
                     </span>
                 </a>
             </li>
             <li>
                 <a href="{{url('about')}}">
                     <span>
-                        About Us
+                        {!! __('trans.about') !!}
                     </span>
                 </a>
             </li>

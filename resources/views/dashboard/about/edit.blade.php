@@ -69,7 +69,7 @@
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1">Mission</label>
-                                    <textarea type="text" class="form-control" name="mission_en" id="editor1" placeholder="Enter Mission of Website">{{$about->about_en->mission}}</textarea>
+                                    <textarea type="text" class="form-control" name="mission_en" id="" rows="6" placeholder="Enter Mission of Website">{{$about->about_en->mission}}</textarea>
                                     <p class="help-block">Edit Mission of website</p>
                                 </div>
 
@@ -81,7 +81,7 @@
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1">Vision</label>
-                                    <textarea type="text" class="form-control" name="vision_en" id="editor2" placeholder="Enter Vision of Website" >{{$about->about_en->vision}}</textarea>
+                                    <textarea type="text" class="form-control" name="vision_en" id="" rows="6" placeholder="Enter Vision of Website" >{{$about->about_en->vision}}</textarea>
                                     <p class="help-block">Edit Vision of website</p>
                                 </div>
 
@@ -93,7 +93,7 @@
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1">Values</label>
-                                    <textarea type="text" class="form-control" name="values_en" id="editor3" placeholder="Enter Values of Website" >{{$about->about_en->value}}</textarea>
+                                    <textarea type="text" class="form-control" name="values_en" id="" rows="6" placeholder="Enter Values of Website" >{{$about->about_en->value}}</textarea>
                                     <p class="help-block">Edit Values of website</p>
                                 </div>
 
@@ -133,19 +133,19 @@
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1">مهمتنا</label>
-                                    <textarea type="text" class="form-control" name="mission_ar" id="editor4" placeholder="عدل مهمة الشركة">{{$about->about_ar->mission}}</textarea>
+                                    <textarea type="text" class="form-control" name="mission_ar" id="" rows="6" placeholder="عدل مهمة الشركة">{{$about->about_ar->mission}}</textarea>
                                     <p class="help-block">قم بتعديل مهمة الشركة</p>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1">رؤيتنا</label>
-                                    <textarea type="text" class="form-control" name="vision_ar" id="editor5" placeholder="عدل رؤية الشركة" >{{$about->about_ar->vision}}</textarea>
+                                    <textarea type="text" class="form-control" name="vision_ar" id="" rows="6" placeholder="عدل رؤية الشركة" >{{$about->about_ar->vision}}</textarea>
                                     <p class="help-block">قم بتعديل رؤية الشركة</p>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1">قيمنا</label>
-                                    <textarea type="text" class="form-control" name="values_ar" id="editor6" placeholder="عدل قيم الشركة" >{{$about->about_ar->value}}</textarea>
+                                    <textarea type="text" class="form-control" name="values_ar" id="" rows="6" placeholder="عدل قيم الشركة" >{{$about->about_ar->value}}</textarea>
                                     <p class="help-block">قم بتعديل قيم الشركة</p>
                                 </div>
 

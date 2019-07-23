@@ -55,8 +55,8 @@
                                 </div>
 
                                 <div class="col-lg-12">
-                                    <label for="exampleInputEmail1"> Slide Description</label>
-                                    <input type="text" class="form-control" name="description_en" id="exampleInputEmail1" placeholder="Enter Service Description" value="{{$service->service_en->description}}">
+                                    <label for="exampleInputEmail1"> Service Description</label>
+                                    <textarea class="form-control" name="description_en" id="exampleInputEmail1" placeholder="Enter Service Description" rows="6">{{$service->service_en->description}}</textarea>
                                     <p class="help-block">Enter Description of Service</p>
                                 </div>
 
@@ -101,7 +101,7 @@
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1">وصف الخدمة</label>
-                                    <input type="text" class="form-control" name="description_ar" id="exampleInputEmail1" placeholder="ادخل  وصف الخدمة" value="{{$service->service_ar->description}}">
+                                    <textarea class="form-control" name="description_ar" id="exampleInputEmail1" placeholder="ادخل  وصف الخدمة" rows="6">{{$service->service_ar->description}}</textarea>
                                     <p class="help-block">ادخل وصفا دقيقا عن الخدمة</p>
                                 </div>
 

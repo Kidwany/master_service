@@ -16,7 +16,7 @@ class LayoutsServiceProvide extends ServiceProvider
     public function boot()
     {
         View::composer(
-            ['website.welcome', 'website.about', 'website.gallery', 'website.contact', 'website.service', 'website.serviceDetails'],
+            ['website.welcome', 'website.about', 'website.gallery', 'website.contact', 'website.service', 'website.service_details'],
             LayoutsComposer::class
         );
     }

@@ -57,7 +57,7 @@
 
                             <div class="col-lg-12">
                                 <label for="exampleInputEmail1"> Slide Description</label>
-                                <input type="text" class="form-control" name="description_en" id="exampleInputEmail1" placeholder="Enter Service Description" value="{{old('description_en')}}">
+                                <textarea  class="form-control" name="description_en" id="exampleInputEmail1" placeholder="Enter Service Description" rows="6">{{old('description_en')}}</textarea>
                                 <p class="help-block">Enter Description of Service</p>
                             </div>
 
@@ -102,7 +102,7 @@
 
                                 <div class="col-lg-12">
                                     <label for="exampleInputEmail1">وصف الخدمة</label>
-                                    <input type="text" class="form-control" name="description_ar" id="exampleInputEmail1" placeholder="ادخل  وصف الخدمة" value="{{old('description_ar')}}">
+                                    <textarea class="form-control" name="description_ar" id="exampleInputEmail1" placeholder="ادخل  وصف الخدمة" rows="6" >{{old('description_ar')}}</textarea>
                                     <p class="help-block">ادخل وصفا دقيقا عن الخدمة</p>
                                 </div>
 

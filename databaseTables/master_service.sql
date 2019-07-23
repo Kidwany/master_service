@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2019 at 01:13 AM
+-- Generation Time: Jul 23, 2019 at 02:52 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -197,7 +197,8 @@ INSERT INTO `image` (`id`, `name`, `path`, `album_id`, `created_at`, `updated_at
 (55, '15638358155.jpg', 'dashboardImages/gallery/15638358155.jpg', NULL, '2019-07-22 20:50:15', '2019-07-22 20:50:15'),
 (56, '15638358156.jpg', 'dashboardImages/gallery/15638358156.jpg', NULL, '2019-07-22 20:50:15', '2019-07-22 20:50:15'),
 (57, '1563836355mission.png', 'dashboardImages/about/1563836355mission.png', NULL, '2019-07-22 20:59:15', '2019-07-22 20:59:15'),
-(58, '1563836772slide-1.jpg', 'dashboardImages/slider/1563836772slide-1.jpg', NULL, '2019-07-22 21:06:12', '2019-07-22 21:06:12');
+(58, '1563836772slide-1.jpg', 'dashboardImages/slider/1563836772slide-1.jpg', NULL, '2019-07-22 21:06:12', '2019-07-22 21:06:12'),
+(59, '15638768811.jpg', 'dashboardImages/service/15638768811.jpg', NULL, '2019-07-23 08:14:41', '2019-07-23 08:14:41');
 
 -- --------------------------------------------------------
 
@@ -212,8 +213,17 @@ CREATE TABLE `message` (
   `phone` varchar(191) NOT NULL,
   `title` varchar(191) DEFAULT NULL,
   `message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`id`, `name`, `email`, `phone`, `title`, `message`, `created_at`, `updated_at`) VALUES
+(4, 'ascascascsac', 'sacsacsaccsac@gmail.com', '01100960900', 'ascascascsacsac', 'ascascascsacsacascascascsacsacascascascsacsac', '2019-07-23 08:53:51', '2019-07-23 08:53:51'),
+(5, 'ascascsac', 'sacsacsacas@gmail.com', '01223236555', 'SCsacascsacas', 'SCsacascsacasSCsacascsacasSCsacascsacasSCsacascsacasSCsacascsacasSCsacascsacasSCsacascsacas', '2019-07-23 08:56:17', '2019-07-23 08:56:17');
 
 -- --------------------------------------------------------
 
@@ -253,6 +263,13 @@ CREATE TABLE `service` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `service`
+--
+
+INSERT INTO `service` (`id`, `image_id`, `video_id`, `created_by`, `created_at`, `updated_at`) VALUES
+(7, 59, NULL, 2, '2019-07-23 08:14:41', '2019-07-23 08:14:41');
+
 -- --------------------------------------------------------
 
 --
@@ -273,7 +290,7 @@ CREATE TABLE `setting` (
 --
 
 INSERT INTO `setting` (`id`, `logo`, `status`, `default_lang`, `created_at`, `updated_at`) VALUES
-(1, 47, 0, 'en', '2019-07-23 22:00:00', '2019-07-22 20:18:30');
+(1, 47, 1, 'en', '2019-07-23 22:00:00', '2019-07-23 08:46:09');
 
 -- --------------------------------------------------------
 
@@ -301,6 +318,28 @@ INSERT INTO `slider` (`id`, `image_id`, `video_id`, `url`, `created_by`, `create
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `testimonial`
+--
+
+CREATE TABLE `testimonial` (
+  `id` int(10) NOT NULL,
+  `created_by` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `testimonial`
+--
+
+INSERT INTO `testimonial` (`id`, `created_by`, `created_at`, `updated_at`) VALUES
+(2, 2, '2019-07-23 08:02:57', '2019-07-23 08:02:57'),
+(3, 2, '2019-07-23 08:03:31', '2019-07-23 08:03:31'),
+(4, 2, '2019-07-23 08:04:06', '2019-07-23 08:04:06');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -321,7 +360,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `role_id`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(2, 'Ahmed Kidwany', 'ahmed@gmail.com', 1, NULL, '$2y$10$nKEdHs80k0y8iezFBtWVOODsFXlvxX4Y2ezYDY2f1HQ8hpFPTrdbO', 'Vfb0U8Xo9NFA5wdl50HdcDZmxLij6PwRNSWDURapIS77jIqtgW0aFOc348Of', '2019-06-18 15:45:49', '2019-06-18 16:12:57');
+(2, 'Mohamed Kidwany', 'admin@masterservice.com', 1, NULL, '$2y$10$nKEdHs80k0y8iezFBtWVOODsFXlvxX4Y2ezYDY2f1HQ8hpFPTrdbO', 'LHv0ndt4SbzMP0Szbf1ei6DzjIVsI4OuBvcgPOfNy6NTstmZt6d4dFOqKKZu', '2019-06-18 15:45:49', '2019-06-18 16:12:57');
 
 --
 -- Indexes for dumped tables
@@ -405,6 +444,13 @@ ALTER TABLE `slider`
   ADD KEY `slide_image_id` (`image_id`);
 
 --
+-- Indexes for table `testimonial`
+--
+ALTER TABLE `testimonial`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `testimonial_created_by` (`created_by`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -450,13 +496,13 @@ ALTER TABLE `gallery`
 -- AUTO_INCREMENT for table `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -468,7 +514,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `service`
 --
 ALTER TABLE `service`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `setting`
@@ -481,6 +527,12 @@ ALTER TABLE `setting`
 --
 ALTER TABLE `slider`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `testimonial`
+--
+ALTER TABLE `testimonial`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -532,6 +584,12 @@ ALTER TABLE `setting`
 ALTER TABLE `slider`
   ADD CONSTRAINT `slide_created_by` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `slide_image_id` FOREIGN KEY (`image_id`) REFERENCES `image` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `testimonial`
+--
+ALTER TABLE `testimonial`
+  ADD CONSTRAINT `testimonial_created_by` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `users`
